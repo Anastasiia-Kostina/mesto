@@ -1,0 +1,64 @@
+.page {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  color: #FFFFFF;
+  background-color: #111;
+}
+
+.button-transition:hover {
+  -webkit-transition: opacity .4s linear;
+  -o-transition: opacity .4s linear;
+  transition: opacity .4s linear;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.border {
+  border: 2px solid orange;
+}
+
+.division-line {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  opacity: 0.7;
+  border: 1px solid #545454;  
+}
+
+/*header start*/
+
+.header {
+  display: block;
+  margin: 45px auto 0;
+  padding: 0;
+  min-width: 320px;
+  width: 100%;
+  max-width: 880px;
+  height: 74px;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.header__logo {
+  margin: 0 auto 41px 0;
+  padding: 0;
+  min-width: 142px;
+  min-height: 33px;
+  background: url(./images/Mesto_logo.svg);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/*header end*/

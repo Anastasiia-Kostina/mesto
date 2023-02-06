@@ -1,0 +1,11 @@
+.header {
+  display: block;
+  margin: 45px auto 0;
+  padding: 0;
+  min-width: 320px;
+  width: 100%;
+  max-width: 880px;
+  height: 74px;
+  min-height: 56px;
+  box-sizing: border-box;
+}
