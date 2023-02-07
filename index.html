@@ -5,21 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./vendor/fonts/font.css">
   <title>Mesto Russia</title>
   <meta name="description" content="Четвёртый спринт Яндекс Практикума.
   Галерея мест достопримечательностей России 'Mesto Russia'. Пользователи могут 
   создавать свои галереи.">
   <meta name="keywords" content="Места России, достопримечательности, красивые места,
-  Жак-Ив Кусто, путешествия, виды, природа, фотографии России, Домбай, Гора Эльбрус,
-  Карачаевск">
+  путешествия, виды, природа, фотографии России, Домбай, Гора Эльбрус,
+  Карачаевск, галерея фото, мои фотографии">
   <meta name="author" content="Анастасия Костина">
 </head>
 <body class="page">
-  <header class="header border">
+  <header class="header">
     <div class="header__logo"></div>
-    <hr class="division-line"></hr>
+    <hr class="division-line">
   </header>
   <main class="content">
+    <section class="profile">
+      <div class="profile__about-wrapper">
+        <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau_opt.jpg" alt="Аватар пользователя">
+        <div class="profile__info">
+          <h2 class="profile__info-title">Жак-Ив Кусто</h2>
+          <button class="profile__edit-button"></button> <!--Decided not to make it unified as it'll have
+          its unique functions for JS anyway, so it's a part of profile now-->
+          <p class="profile__info-subtitle">Исследователь океана</p>
+        </div>
+      </div>
+      <button class="profile__add-button"></button> <!--Decided not to make it unified as it'll have
+        its unique functions for JS anyway, so it's a part of profile now-->
+    </section>
 
   </main>
   <footer class="footer">

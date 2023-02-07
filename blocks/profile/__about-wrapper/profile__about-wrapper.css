@@ -1,0 +1,18 @@
+.profile__about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: 282px;
+  max-width: 486px;
+  width: 100%;
+  min-height: 73px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .profile__about-wrapper {
+    display: block;
+  }
+  }

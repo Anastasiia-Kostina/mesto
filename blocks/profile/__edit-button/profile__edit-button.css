@@ -1,0 +1,16 @@
+.profile__edit-button {
+  display: flex;
+  align-self: center;
+  justify-self: right;
+  margin: 15px 0 0 18px;
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  background-color: #111;
+  background-image: url(./images/edit_btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  object-position: center;
+}

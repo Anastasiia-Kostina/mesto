@@ -62,3 +62,119 @@
 }
 
 /*header end*/
+
+/*profile start*/
+.profile {
+  display: flex;
+  justify-content: space-between;
+  /*align-content: baseline;*/
+  margin: 40px auto 0;
+  padding: 0;
+  min-width: 282px;
+  width: 100%;
+  max-width: 880px;
+  box-sizing: border-box;
+}
+
+.profile__about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: 282px;
+  max-width: 486px;
+  width: 100%;
+  min-height: 73px;
+  box-sizing: border-box;
+}
+
+.profile__avatar {
+  margin: 0;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.profile__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  max-width: 336px;
+  width: 100%;
+  min-height: 73px;
+  box-sizing: border-box;
+}
+
+.profile__info-title {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  color: #FFFFFF;
+  word-break: break-word;
+}
+
+.profile__edit-button {
+  display: flex;
+  align-self: center;
+  justify-self: right;
+  margin: 15px 0 0 18px;
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  background-color: #111;
+  background-image: url(./images/edit_btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  object-position: center;
+}
+
+.profile__info-subtitle {
+  margin: 9px 0 0;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.37;
+  color: #FFF;
+}
+
+.profile__add-button {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  margin: 35px 0 35px auto;
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #FFF;
+  background-color: #111;
+  background-image: url(./images/add_btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 720px) {
+  .profile {
+    display: block;
+  }
+
+  .profile__about-wrapper {
+    display: block;
+  }
+  }
+
+/*profile end*/
