@@ -8,3 +8,12 @@
   min-height: 73px;
   box-sizing: border-box;
 }
+
+@media (max-width: 720px) {
+  .profile__info {
+    justify-content: center;
+    margin: 21px auto 0;
+    width: 88.1%;
+    min-height: 54px;
+  }
+}

@@ -4,13 +4,26 @@
   margin: 40px auto 0;
   padding: 0;
   min-width: 282px;
-  width: 100%;
   max-width: 880px;
   box-sizing: border-box;
+}
+
+@media (max-width: 890px) {
+  .profile {
+    margin: 42px 19px 0;
+  }
 }
 
 @media (max-width: 720px) {
   .profile {
     display: block;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile {
+    display: block;
+    margin: 42px 19px 0;
+    min-height: 286px;
   }
 }

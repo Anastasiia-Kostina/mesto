@@ -9,3 +9,36 @@
   color: #FFFFFF;
   word-break: break-word;
 }
+
+@media (max-width: 720px) {
+  .profile__info-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 auto;
+    width: 86%;
+    font-size: 5.6vw;
+    line-height: 1.14;
+    text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .profile__info-title {
+    width: 76.1%;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile__info-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile__info-title {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+}

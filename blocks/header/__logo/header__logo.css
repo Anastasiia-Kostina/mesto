@@ -10,3 +10,22 @@
   object-fit: contain;
   object-position: left center;
 }
+
+@media (max-width: 890px) {
+  .header__logo {
+    margin: 28px auto 32px 27px;
+    padding: 0;
+    width: 11.09vw;
+}
+}
+
+@media (max-width: 720px) {
+  
+  .header__logo {
+    margin: 28px auto 32px 27px;
+    padding: 0;
+    width: 8.05vw;
+    min-width: 103px;
+    min-height: 24px;
+  }
+}

@@ -13,6 +13,9 @@
 
 @media (max-width: 720px) {
   .profile__about-wrapper {
-    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 200px;
   }
   }
