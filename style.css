@@ -365,6 +365,14 @@
   object-position: center center;
 }
 
+.pic-gallery__like-button:hover {
+  -webkit-transition: opacity .4s linear;
+  -o-transition: opacity .4s linear;
+  transition: opacity .4s linear;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 @media (max-width: 890px) {
   .pic-gallery {
     margin: 51px 9vw 0;
