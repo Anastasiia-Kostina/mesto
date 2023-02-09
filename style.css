@@ -138,6 +138,7 @@
 .profile__info-title {
   margin: 0;
   padding: 0;
+  width: 87.5%;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -219,7 +220,7 @@
 
   .profile__info-title {
     margin: 0 0 0 auto;
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1.14;
     text-align: center;
   }
@@ -256,6 +257,7 @@
   @media (max-width: 480px) {
     .profile__info-title {
       margin: 0 0 0 auto;
+      width: 77%;
       font-size: 27px;
       line-height: 1.2;
     }
@@ -276,6 +278,8 @@
 @media (max-width: 320px) {
   .profile__info-title {
     margin: 0;
+    width: 77%;
+    text-align: center;
   }
 
   .profile__edit-button {
