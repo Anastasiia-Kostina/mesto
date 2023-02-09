@@ -1,0 +1,22 @@
+.pic-gallery__cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  grid-template-rows: repeat(2, minmax(min-content, 1fr));
+  row-gap: 20px;
+  column-gap: 17px;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 361px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 890px) {
+  .pic-gallery__cards {
+    display: grid;
+    justify-items: center; /*extremely important*/
+    margin: 0 auto;
+  }
+}

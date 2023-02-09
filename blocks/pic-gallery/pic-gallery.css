@@ -1,0 +1,25 @@
+.pic-gallery {
+  margin: 51px auto 0; /*PerfPix top 304px, not 329*/
+  padding: 0;
+  min-width: 282px;
+  max-width: 880px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 890px) {
+  .pic-gallery {
+    margin: 51px 9vw 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .pic-gallery {
+    margin: 36px 9vw 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pic-gallery {
+    margin: 36px auto 0;
+  }
+}

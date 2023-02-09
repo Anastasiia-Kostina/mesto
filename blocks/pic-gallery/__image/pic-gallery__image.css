@@ -1,0 +1,5 @@
+.pic-gallery__image {
+  width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
