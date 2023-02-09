@@ -305,7 +305,6 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 361px;
   box-sizing: border-box;
 }
 
@@ -316,6 +315,7 @@
   margin: 0;
   padding: 0;
   max-width: 282px;
+  height: 361px;
   background: #FFFFFF;
   border-radius: 10px;
   box-sizing: border-box;
@@ -339,7 +339,7 @@
 .pic-gallery__title {
   margin: 0;
   padding: 0;
-  max-width: 224px;
+  max-width: 198px; /*Cherkessk*/
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
@@ -393,3 +393,50 @@
   }
 }
 /*pic-gallery end*/
+
+/*----------footer start---------*/
+.footer {
+  display: block;
+  margin: 67px auto 60px;
+  padding: 0;
+  min-width: 282px;
+  width: 100%;
+  max-width: 880px;
+  box-sizing: border-box;
+}
+
+.footer__copyright {
+  margin: 0;
+  padding: 0;
+  width: 318px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}
+
+@media (max-width: 890px) {
+  .footer__copyright {
+    margin: 0 auto 0 11.5vw;
+    width: 282px;
+  }
+}
+
+@media (max-width: 710px) {
+  .footer {
+    margin: 48px auto 36px; /*50 works better*/
+  }
+
+  .footer__copyright {
+    margin: 0 auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+    color: #545454;
+  }
+}
+/*----------footer end---------*/
