@@ -85,7 +85,18 @@
     <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
   </footer>
   <section class="popup">
-
+    <form class="popup__form">
+      <fieldset class="popup__input-container">
+        <button class="popup__close-button"></button>
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <input type="text" class="popup__info-title" name="title" placeholder="Жак-Ив Кусто"></input>
+        <input type="text" class="popup__info-subtitle" name="subtitle" placeholder="Исследователь океана"></input>
+        <!--<button class="popup__submit-button"></button>-->
+      </fieldset>
+      <fieldset class="popup__submit">
+        <input type="submit" class="popup__submit-button">
+      </fieldset>
+    </form>
   </section>
   <script src="./scripts/index.js"></script>
 </body>
