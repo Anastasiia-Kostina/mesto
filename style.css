@@ -378,6 +378,10 @@
   cursor: pointer;
 }
 
+.pic-gallery__like-button_active {
+  background: url(./images/like-button-active.svg);
+}
+
 @media (max-width: 890px) {
   .pic-gallery {
     margin: 51px 9vw 0;

@@ -78,3 +78,37 @@ popupCloseBtn.addEventListener('click', closePopup);*/
 }
 //toggleOpenPopup();
 editButton.addEventListener('click', toggleOpenPopup);*/
+
+
+//like button
+
+const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
+console.log(likeBtn);
+
+likeBtn.forEach(function(element) {
+  element.addEventListener('click', function(event){
+    event.target.classList.toggle('pic-gallery__like-button_active');
+  })
+});
+
+
+//1 Works for only one element
+
+/*const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
+console.log(likeBtn);
+
+const toggleClickLikeBtn = function () {
+  likeBtn.classList.toggle('pic-gallery__like-button_active');
+  console.log('like like');
+}
+
+const likeBtnActive = function() {
+  if (likeBtn){
+  toggleClickLikeBtn();
+  }
+  else {
+    return;
+   }
+};
+
+likeBtn.addEventListener('click', likeBtnActive);*/
