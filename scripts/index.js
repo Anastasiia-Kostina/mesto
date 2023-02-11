@@ -12,6 +12,7 @@ const openPopup = function(event) {
   console.log('open it');
 };
 
+//------------------------------function popup start--------------------------
 const closePopup = function() {
   popupElement.classList.remove('popup_opened');
   console.log('close it');
@@ -30,7 +31,30 @@ editButton.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
 popupElement.addEventListener('click', handleClosePopupOverlayClick);
 
+//------------------------------function popup end--------------------------
 
+//-----------------------function popup edit start----------------------
+
+
+
+//----------------------function popup edit end-------------------
+
+
+
+//---------------------function like button start-------------------
+
+const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
+console.log(likeBtn);
+
+likeBtn.forEach(function(element) {
+  element.addEventListener('click', function(event){
+    event.target.classList.toggle('pic-gallery__like-button_active');
+  })
+});
+//---------------------function like button end------------------
+
+
+//======================function popup other options start=======================
 //3 Same but with toggle
 /*const toggleOpenPopup = function() {
   popupElement.classList.toggle('popup_opened');
@@ -78,20 +102,9 @@ popupCloseBtn.addEventListener('click', closePopup);*/
 }
 //toggleOpenPopup();
 editButton.addEventListener('click', toggleOpenPopup);*/
+//==========================function popup other options end================
 
-
-//like button
-
-const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
-console.log(likeBtn);
-
-likeBtn.forEach(function(element) {
-  element.addEventListener('click', function(event){
-    event.target.classList.toggle('pic-gallery__like-button_active');
-  })
-});
-
-
+//====================function like button other options start==================
 //1 Works for only one element
 
 /*const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
@@ -112,3 +125,5 @@ const likeBtnActive = function() {
 };
 
 likeBtn.addEventListener('click', likeBtnActive);*/
+
+//====================function like button other options end==================
