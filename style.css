@@ -322,6 +322,7 @@
   height: 361px;
   background: #FFFFFF;
   border-radius: 10px;
+  border: none;
   box-sizing: border-box;
 }
 
@@ -455,7 +456,7 @@
 
 /*-------------popup start---------*/
 .popup {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -467,6 +468,10 @@
   background-color: rgba(0, 0, 0, .5);
   box-sizing: border-box;
   z-index: 50;
+}
+
+.popup_opened {
+  display: flex;
 }
 
 .popup__form {
