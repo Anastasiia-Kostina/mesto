@@ -1,5 +1,6 @@
 <!--Здравствуйте! Более или менее доделала работу. Долго правила js для заполнения формы,
-   но чудом слепила.
+   но чудом слепила.Пустые popup__edit и пр. подобные элементы, нужные для js, обрели css
+   т.к. пыталась исправить ошибку из тестов Практикума перед итерацией.
    Буду ждать ревью. Хорошего дня (хоть и отправляю ночью)!
   -->
 
@@ -86,7 +87,7 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
   </footer>
-  <section class="popup popup__edit">
+  <div class="popup popup__edit">
     <form class="popup__form" name="edit">
       <button type="button" class="popup__close-button button-transition"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
@@ -100,7 +101,7 @@
         <input type="submit" class="popup__submit-button" value="Сохранить">
       </fieldset>
     </form>
-  </section>
+  </div>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
