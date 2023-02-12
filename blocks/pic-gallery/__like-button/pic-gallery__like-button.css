@@ -7,7 +7,9 @@
   border: none;
   background: url(../../../images/like-button.svg);
   background-repeat: no-repeat;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: center center;
   object-position: center center;
 }
 

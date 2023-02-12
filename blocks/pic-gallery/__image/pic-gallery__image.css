@@ -1,6 +1,8 @@
 .pic-gallery__image {
   width: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: left center;
   object-position: left center;
   border-radius: 10px 10px 0 0;
 }

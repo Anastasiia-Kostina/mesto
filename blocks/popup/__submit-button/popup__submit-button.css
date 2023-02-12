@@ -13,6 +13,7 @@
   color: #FFF;
   background-color: #000;
   border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 430px) {

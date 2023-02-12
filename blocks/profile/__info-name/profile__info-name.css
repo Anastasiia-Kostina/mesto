@@ -10,6 +10,7 @@
   line-height: 1.14;
   color: #FFFFFF;
   word-break: break-word;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -26,7 +27,6 @@
 
 @media (max-width: 480px) {
   .profile__info-name {
-    margin: 0 0 0 auto;
     width: 77%;
     font-size: 27px;
     line-height: 1.2;
@@ -36,7 +36,6 @@
 @media (max-width: 320px) {
   .profile__info-name {
     margin: 0;
-    width: 77%;
     text-align: center;
   }
 }

@@ -23,12 +23,16 @@
 .popup__close-button:before {
   left: -3px;
   width: 121%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 .popup__close-button:after {
   left: -5px;
   width: 122%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 

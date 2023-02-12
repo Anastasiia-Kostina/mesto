@@ -14,14 +14,15 @@
   background-image: url(../../../images/add_btn.png);
   background-position: center;
   background-repeat: no-repeat;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: center;
   object-position: center;
 }
 
 @media (max-width: 720px) {
   .profile__add-button {
     margin: 36px auto 0;
-    padding: 0;
     width: 282px;
   }
 }

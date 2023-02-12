@@ -1,14 +1,23 @@
 .pic-gallery__cards {
+  display: -ms-grid;
   display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  -ms-grid-rows: minmax(-webkit-min-content, 1fr) 20px minmax(-webkit-min-content, 1fr);
+  -ms-grid-rows: minmax(min-content, 1fr) 20px minmax(min-content, 1fr);
+  grid-template-rows: repeat(2, minmax(-webkit-min-content, 1fr));
   grid-template-rows: repeat(2, minmax(min-content, 1fr));
   row-gap: 20px;
+  -webkit-column-gap: 17px;
+  -moz-column-gap: 17px;
   column-gap: 17px;
   justify-items: center;
   margin: 0;
   padding: 0;
   width: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
