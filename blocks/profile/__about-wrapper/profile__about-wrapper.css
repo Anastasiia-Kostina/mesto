@@ -1,6 +1,12 @@
 .profile__about-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -8,13 +14,16 @@
   max-width: 486px;
   width: 100%;
   min-height: 73px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 @media (max-width: 720px) {
   .profile__about-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    align-items: center;
     margin: 0 auto;
     min-height: 200px;
   }

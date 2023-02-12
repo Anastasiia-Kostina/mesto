@@ -8,7 +8,9 @@
   background-image: url(../../../images/edit_btn.png);
   background-position: center;
   background-repeat: no-repeat;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: center;
   object-position: center;
 }
 
@@ -21,15 +23,6 @@
     padding: 7px;
     width: 18px;
     height: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile__edit-button {
-    position: relative;
-    top: 9px;
-    left: -2px;
-    margin: 0 auto 0 10px;
   }
 }
 
