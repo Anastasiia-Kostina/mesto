@@ -1,0 +1,6 @@
+.popup__division-line {
+  margin: 8px 0 0; /*need 13 in the layout...*/ /*720 9*/
+  padding: 0;
+  opacity: 0.2;
+  border: 1px solid #000;
+}

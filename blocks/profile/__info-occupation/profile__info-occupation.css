@@ -1,16 +1,21 @@
-.profile__info-subtitle {
+.profile__info-occupation {
   margin: 9px 0 0;
   padding: 0;
+  max-width: 336px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   color: #FFF;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 720px) {
-  .profile__info-subtitle {
+  .profile__info-occupation {
     justify-content: center;
     position: relative;
     top: 4px;

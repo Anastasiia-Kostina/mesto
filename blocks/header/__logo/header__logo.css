@@ -3,7 +3,7 @@
   padding: 0;
   min-width: 142px;
   min-height: 33px;
-  background: url(./images/Mesto_logo.svg);
+  background: url(../../../images/Mesto_logo.svg);
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -16,11 +16,10 @@
     margin: 28px auto 32px 27px;
     padding: 0;
     width: 11.09vw;
-}
+  }
 }
 
 @media (max-width: 720px) {
-  
   .header__logo {
     margin: 28px auto 32px 27px;
     padding: 0;

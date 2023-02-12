@@ -1,0 +1,23 @@
+.popup__submit {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 48px 0 0 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  background: #000000;
+  border-radius: 2px; 
+  border: none;
+}
+
+.popup__submit:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 430px) {
+.popup__submit {
+  margin: 44.5px 0 0;
+  height: 46px;
+  }
+}

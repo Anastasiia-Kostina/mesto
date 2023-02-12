@@ -8,10 +8,10 @@
   padding: 0;
   width: 150px;
   height: 50px;
-  border-radius: 2px;
   border: 2px solid #FFF;
+  border-radius: 2px;
   background-color: #111;
-  background-image: url(./images/add_btn.png);
+  background-image: url(../../../images/add_btn.png);
   background-position: center;
   background-repeat: no-repeat;
   object-fit: contain;

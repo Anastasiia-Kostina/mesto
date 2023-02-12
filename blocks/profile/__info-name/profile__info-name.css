@@ -1,6 +1,7 @@
-.profile__info-title {
+.profile__info-name {
   margin: 0;
   padding: 0;
+  max-width: 294px;
   width: 87.5%;
   font-family: 'Inter';
   font-style: normal;
@@ -9,10 +10,13 @@
   line-height: 1.14;
   color: #FFFFFF;
   word-break: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 720px) {
-  .profile__info-title {
+  .profile__info-name {
     margin: 0 0 0 auto;
     font-size: 32px;
     line-height: 1.14;
@@ -21,7 +25,7 @@
 }
 
 @media (max-width: 480px) {
-  .profile__info-title {
+  .profile__info-name {
     margin: 0 0 0 auto;
     width: 77%;
     font-size: 27px;
@@ -30,7 +34,7 @@
 }
 
 @media (max-width: 320px) {
-  .profile__info-title {
+  .profile__info-name {
     margin: 0;
     width: 77%;
     text-align: center;
