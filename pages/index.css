@@ -35,7 +35,7 @@
 /**Js blocks**/
 /*popup*/
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_open/popup_opened.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__division-line/popup__division-line.css);
@@ -45,6 +45,6 @@
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
   /*popup empty elements for js*/
-@import url(../blocks/popup/__edit/popup__edit.css);
+@import url(../blocks/popup/__edit/popup_edit.css);
 @import url(../blocks/popup/__input/_type/_name/popup__input_type_name.css);
 @import url(../blocks/popup/__input/_type/_occupation/popup__input_type_occupation.css);
