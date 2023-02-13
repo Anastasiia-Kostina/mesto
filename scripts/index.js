@@ -9,7 +9,7 @@ console.log(editButton);
 
 const popupForm = popupElement.querySelector(".popup__form");
 console.log('popupForm', popupForm);
-const popupEdit = document.querySelector(".popup__edit");
+const popupEdit = document.querySelector(".popup_edit");
 console.log('popupEdit', popupEdit);
 const popupInputName = popupElement.querySelector('.popup__input_type_name');
 console.log('popupInputName', popupInputName);
