@@ -4,7 +4,6 @@
 /*Generic page rules*/
 @import url(../blocks/page/page.css);
 @import url(../blocks/button-transition/button-transition.css);
-@import url(../blocks/division-line/division-line.css);
 
 /**body**/
 /*block header*/
@@ -38,7 +37,6 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
-@import url(../blocks/popup/__division-line/popup__division-line.css);
 @import url(../blocks/popup/__header/popup__header.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 @import url(../blocks/popup/__input/popup__input.css);

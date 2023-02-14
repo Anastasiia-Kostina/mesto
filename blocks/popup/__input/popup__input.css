@@ -1,6 +1,6 @@
 .popup__input {
   margin: 29px 0 0;
-  padding: 0;
+  padding: 0 0 10px 0;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -8,6 +8,7 @@
   line-height: 1.21;
   color: #000;
   border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
   -webkit-box-shadow: inset 0 0 0 50px #fff;/*Changing bg of an active input field*/
   -webkit-text-fill-color: #000;/*Changing bg of an active input field*/

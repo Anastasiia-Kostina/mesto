@@ -1,7 +1,6 @@
-<!--Здравствуйте! Более или менее доделала работу. Долго правила js для заполнения формы,
-   но чудом слепила.Пустые popup__edit и пр. подобные элементы, нужные для js, обрели css
-   т.к. пыталась исправить ошибку из тестов Практикума перед итерацией.
-   Буду ждать ревью. Хорошего дня!
+<!--Не удалось найти универсального решения с webkit чтобы при активном input в popup 
+  нижняя граница не подсвечивалась браузерным стилем (желтый), поэтому раньше 
+  добавляла hr и убирала границы. 
   -->
 
 <!DOCTYPE html>
@@ -23,7 +22,6 @@
 <body class="page">
   <header class="header">
     <div class="header__logo"></div>
-    <hr class="division-line">
   </header>
   <main class="content">
     <section class="profile">
@@ -92,10 +90,8 @@
       <button type="button" class="popup__close-button button-transition"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <fieldset class="popup__input-container" name="profile-info">
-        <input type="text" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
-        <hr class="popup__division-line">
-        <input type="text" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
-        <hr class="popup__division-line">
+        <input type="text" type="color" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
+        <input type="text" type="color" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
       </fieldset>
       <fieldset class="popup__submit">
         <input type="submit" class="popup__submit-button" value="Сохранить">
