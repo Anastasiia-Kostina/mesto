@@ -1,7 +1,7 @@
-<!--Пришлось ценою ровности сделать у occupation inline-block т.к. заметила, 
+<!--Добрый вечер! Спасибо за ревью. Было ощущение как после лайф-кодинга: удалось подглядеть за ходом мысли опытного разработчика. 
+  Постаралась всё исправить. Пришлось сделать у occupation inline-block т.к. заметила, 
   что не реализовывался эллипсис. Не удалось найти универсального решения с webkit чтобы при активном input в popup 
-  нижняя граница не подсвечивалась браузерным стилем (желтый), поэтому раньше 
-  добавляла hr и убирала границы. -->
+  нижняя граница не подсвечивалась браузерным стилем (желтый), поэтому раньше добавляла hr и убирала границы. -->
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -90,8 +90,8 @@
       <button type="button" class="popup__close-button button-transition" aria-label="Закрыть область редактирования профиля"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <fieldset class="popup__input-container" name="profile-info">
-        <input type="text" type="color" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
-        <input type="text" type="color" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
+        <input type="text" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
+        <input type="text" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
       </fieldset>
       <button type="submit" class="popup__submit-button" aria-label="Сохранить информацию в профиле">Сохранить</button>
     </form>
