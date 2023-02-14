@@ -29,11 +29,11 @@
         <img class="profile__avatar" src="./images/Jacques-Yves_Cousteau_opt.jpg" alt="Аватар пользователя">
         <div class="profile__info">
           <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button button-transition"></button>
+          <button type="button" class="profile__edit-button button-transition" aria-label="Редактировать профиль"></button>
           <p class="profile__info-occupation">Исследователь океана</p>
         </div>
       </div>
-      <button type="button" class="profile__add-button button-transition"></button>
+      <button type="button" class="profile__add-button button-transition" aria-label="Добавить карточку в галерею"></button>
     </section>
     <section class="pic-gallery">
       <ul class="pic-gallery__cards">
@@ -41,42 +41,42 @@
           <img class="pic-gallery__image" src="./images/Karachaevsk_opt.jpg" alt="Фото старинной постройки в Карачаевске">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Карачаевск</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>            
         </li>
         <li class="pic-gallery__card">
           <img class="pic-gallery__image" src="./images/Elbrus_mountain_opt.jpg" alt="Фото горы Эльбрус с нежно-персиковым небом">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Гора Эльбрус</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>             
         </li>
         <li class="pic-gallery__card">
           <img class="pic-gallery__image" src="./images/Dombay_opt.jpg" alt="Фото леса и горного пика в Домбай">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Домбай</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>            
         </li>
         <li class="pic-gallery__card">
           <img class="pic-gallery__image" src="./images/Elbrus_mountain_opt.jpg" alt="Фото горы Эльбрус с утренним персиковым небом">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Гора Эльбрус</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>           
         </li>
         <li class="pic-gallery__card">
           <img class="pic-gallery__image" src="./images/Dombay_opt.jpg" alt="Фото леса и горного пика в Домбай">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Домбай</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>            
         </li>
         <li class="pic-gallery__card">
           <img class="pic-gallery__image" src="./images/Karachaevsk_opt.jpg" alt="Фото старинной постройки в Карачаевске">
           <div class="pic-gallery__info">
             <h2 class="pic-gallery__title">Карачаево-Черкесия</h2>
-            <button type="button" class="pic-gallery__like-button"></button>
+            <button type="button" class="pic-gallery__like-button" aria-label="Поставить лайк"></button>
           </div>            
         </li>
       </ul>
@@ -87,13 +87,13 @@
   </footer>
   <div class="popup popup_edit">
     <form class="popup__form" name="FormEdit">
-      <button type="button" class="popup__close-button button-transition"></button>
+      <button type="button" class="popup__close-button button-transition" aria-label="Закрыть область редактирования профиля"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <fieldset class="popup__input-container" name="profile-info">
         <input type="text" type="color" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
         <input type="text" type="color" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
       </fieldset>
-      <button type="submit" class="popup__submit-button">Сохранить</button>
+      <button type="submit" class="popup__submit-button" aria-label="Сохранить информацию в профиле">Сохранить</button>
     </form>
   </div>
   <script src="./scripts/index.js"></script>
