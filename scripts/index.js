@@ -7,8 +7,7 @@ console.log(popupCloseBtn);
 const editButton = document.querySelector('.profile__edit-button');
 console.log(editButton);
 
-const popupForm = popupElement.querySelector(".popup__form");
-console.log('popupForm', popupForm);
+const popupFormSubmit = popupElement.querySelector(".popup__submit-button");
 const popupEdit = document.querySelector(".popup_edit");
 console.log('popupEdit', popupEdit);
 const popupInputName = popupElement.querySelector('.popup__input_type_name');
@@ -57,7 +56,7 @@ const handlePopupSubmit = function (event) {
 editButton.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
 popupElement.addEventListener('click', handleClosePopupOverlayClick);
-popupForm.addEventListener('submit', handlePopupSubmit);
+popupFormSubmit.addEventListener('click', handlePopupSubmit);//mb will be 'submit' when complete
 
 //---------------------function like button start-------------------
 

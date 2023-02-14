@@ -42,7 +42,3 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
-  /*popup empty elements for js*/
-@import url(../blocks/popup/__edit/popup_edit.css);
-@import url(../blocks/popup/__input/_type/_name/popup__input_type_name.css);
-@import url(../blocks/popup/__input/_type/_occupation/popup__input_type_occupation.css);
