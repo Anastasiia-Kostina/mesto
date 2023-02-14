@@ -1,7 +1,8 @@
 .footer__copyright {
   margin: 0;
   padding: 0;
-  width: 318px;
+  width: 100%;
+  max-width: 318px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -13,7 +14,7 @@
 @media (max-width: 890px) {
   .footer__copyright {
     margin: 0 auto 0 11.5vw;
-    width: 282px;
+    max-width: 282px;
   }
 }
 
