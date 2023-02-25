@@ -8,10 +8,13 @@
   flex-direction: column;
   -ms-flex-line-pack: start;
   align-content: flex-start;
+  position: relative;
+  top: 0;
+  left: 0;
   margin: 0;
   padding: 0;
-  max-width: 282px;
-  max-height: 361px;
+  width: 282px; /*the cards don't change anyway*/
+  height: 361px;
   background: #FFFFFF;
   border-radius: 10px;
   border: none;

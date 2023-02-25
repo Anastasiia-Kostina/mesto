@@ -23,6 +23,7 @@
 @import url(../blocks/pic-gallery/pic-gallery.css);
 @import url(../blocks/pic-gallery/__cards/pic-gallery__cards.css);
 @import url(../blocks/pic-gallery/__card/pic-gallery__card.css);
+@import url(../blocks/pic-gallery/__delete-button/pic-gallery__delete-button.css);
 @import url(../blocks/pic-gallery/__image/pic-gallery__image.css);
 @import url(../blocks/pic-gallery/__info/pic-gallery__info.css);
 @import url(../blocks/pic-gallery/__title/pic-gallery__title.css);

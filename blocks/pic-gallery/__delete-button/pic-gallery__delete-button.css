@@ -1,0 +1,26 @@
+.pic-gallery__delete-button {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  margin: 0;
+  padding: 0;
+  width: 18px;
+  height: 19px;
+  border: none;
+  background: url(../../../images/delete-button.svg);
+  background-repeat: no-repeat;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center center;
+  object-position: center center;
+}
+
+.pic-gallery__delete-button:hover {
+  -webkit-transition: opacity .3s linear;
+  -o-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+  opacity: 0.5;
+  cursor: pointer;
+}
