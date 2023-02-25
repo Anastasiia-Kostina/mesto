@@ -1,3 +1,5 @@
+
+//---------------popup profile edit start----------------------- 
 const popupElement = document.querySelector('.popup');
 const popupCloseBtn = popupElement.querySelector('.popup__close-button');
 const editButton = document.querySelector('.profile__edit-button');
@@ -20,7 +22,6 @@ const closePopup = function() {
   popupEdit.classList.remove('popup_opened');
 };
 
-//------------------------------function popup start--------------------
 
 const handleClosePopupOverlayClick = function (event) {
   if (event.target === event.currentTarget) {
@@ -30,7 +31,6 @@ const handleClosePopupOverlayClick = function (event) {
     return;
   }
 }
-//------------------------------function popup end----------------------
 
 //-----------------------function popup edit start----------------------
 const handlePopupSubmit = function (event) {
@@ -44,42 +44,42 @@ const handlePopupSubmit = function (event) {
 editButton.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
 popupElement.addEventListener('click', handleClosePopupOverlayClick);
-popupFormSubmit.addEventListener('click', handlePopupSubmit);//mb will be 'submit' when complete
+popupFormSubmit.addEventListener('click', handlePopupSubmit); //mb will be 'submit' when complete
 
 
+//--------------------template cards start------------------
 
-//--------------------template cards start----------------
 const picGalleryCards = document.querySelector('.pic-gallery__cards');
 const picGalleryCardTemplate = document.querySelector('.pic-gallery__cards-template').content;
 
 const initialPicCards = [
   {
-    title: 'Байкал',
+    name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
     alt: 'Изображение с замёрзшим Байкалом'
   },
   {
-    title: 'Холмогорский район',
+    name: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
     alt: 'Изображение с дорогой в сельской местности Холмогорского района'
   },
   {
-    title: 'Камчатка',
+    name: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
     alt: 'Изображение с горой на Камчатке'
   },
   {
-    title: 'Иваново',
+    name: 'Иваново',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
     alt: 'Изображение с кварталом домов в Иваново'
   },
   {
-    title: 'Челябинская область',
+    name: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
     alt: 'Изображение с заснеженными горами и озером Челябинска'
   },
   {
-    title: 'Архыз',
+    name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
     alt: 'Изображение с холмами Архыза'
   }
@@ -91,7 +91,7 @@ initialPicCards.forEach(function (element) {
   picGalleryCardElement.querySelector('.pic-gallery__delete-button').addEventListener('click', function(event){
     console.log();
   });
-  picGalleryCardElement.querySelector('.pic-gallery__title').textContent = element.title;
+  picGalleryCardElement.querySelector('.pic-gallery__name').textContent = element.name;
   picGalleryCardElement.querySelector('.pic-gallery__image').src = element.link;
   picGalleryCardElement.querySelector('.pic-gallery__image').alt = element.alt;
   picGalleryCardElement.querySelector('.pic-gallery__like-button').addEventListener('click', function(event){

@@ -26,7 +26,7 @@
 @import url(../blocks/pic-gallery/__delete-button/pic-gallery__delete-button.css);
 @import url(../blocks/pic-gallery/__image/pic-gallery__image.css);
 @import url(../blocks/pic-gallery/__info/pic-gallery__info.css);
-@import url(../blocks/pic-gallery/__title/pic-gallery__title.css);
+@import url(../blocks/pic-gallery/__name/pic-gallery__name.css);
 @import url(../blocks/pic-gallery/__like-button/pic-gallery__like-button.css);
 @import url(../blocks/pic-gallery/__like-button/_active/pic-gallery__like-button_active.css);
 /*block footer*/
