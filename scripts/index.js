@@ -4,7 +4,7 @@ const popupElement = document.querySelector('.popup');
 const popupCloseBtn = popupElement.querySelector('.popup__close-button');
 const editButton = document.querySelector('.profile__edit-button');
 
-const popupFormSubmit = popupElement.querySelector(".popup__submit-button");
+const popupFormSubmitEdit = popupElement.querySelector(".popup__submit-edit-button");
 const popupEdit = document.querySelector(".popup_edit");
 const popupInputName = popupElement.querySelector('.popup__input_type_name');
 const popupInputOccupation = popupElement.querySelector('.popup__input_type_occupation');
@@ -44,8 +44,21 @@ const handlePopupSubmit = function (event) {
 editButton.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
 popupElement.addEventListener('click', handleClosePopupOverlayClick);
-popupFormSubmit.addEventListener('click', handlePopupSubmit); //mb will be 'submit' when complete
+popupFormSubmitEdit.addEventListener('click', handlePopupSubmit); //mb will be 'submit' when complete
+//---------------popup profile edit end-----------------------
 
+//---------------popup profile add start-----------------------
+const addCardButton = document.querySelector('.profile__add-button');
+const popupFormSubmitCreate = popupElement.querySelector(".popup__submit-create-button");
+const popupAdd = document.querySelector(".popup_add");
+const popupInputCardName = popupElement.querySelector('.popup__input_type_card-pic-name');
+const popupInputCardLink = popupElement.querySelector('.popup__input_type_card-pic-link');
+
+
+
+
+
+//---------------popup profile add end-----------------------
 
 //--------------------template cards start------------------
 

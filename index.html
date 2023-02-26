@@ -83,19 +83,28 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
   </footer>
-  <!--<template class="popup-template">-->
-    <div class="popup popup_edit">
-      <form class="popup__form" name="FormEdit">
-        <button type="button" class="popup__close-button button-transition" aria-label="Закрыть область редактирования профиля"></button>
-        <h2 class="popup__header">Редактировать профиль</h2>
-        <fieldset class="popup__input-container" name="profile-info">
-          <input type="text" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
-          <input type="text" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
-        </fieldset>
-        <button type="submit" class="popup__submit-button" aria-label="Сохранить информацию в профиле">Сохранить</button>
-      </form>
-    </div>
-  <!--</template>-->
+  <div class="popup popup_edit">
+    <form class="popup__form" name="FormEdit">
+      <button type="button" class="popup__close-button button-transition" aria-label="Закрыть область редактирования профиля"></button>
+      <h2 class="popup__header">Редактировать профиль</h2>
+      <fieldset class="popup__input-container" name="profile-info">
+        <input type="text" class="popup__input popup__input_type_name" name="name" placeholder="Имя">
+         <input type="text" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий">
+      </fieldset>
+      <button type="submit" class="popup__submit-button popup__submit-edit-button" aria-label="Сохранить информацию в профиле">Сохранить</button>
+    </form>
+  </div>
+  <div class="popup popup_add">
+    <form class="popup__form" name="FormAdd">
+      <button type="button" class="popup__close-button button-transition" aria-label="Закрыть область добавления картотчки с фото в галерею"></button>
+      <h2 class="popup__header">Новое место</h2>
+      <fieldset class="popup__input-container" name="gallery-card-info">
+        <input type="text" class="popup__input popup__input_type_card-pic-name" name="card-pic-name" placeholder="Название карточки с картинкой">
+         <input type="text" class="popup__input popup__input_type_card-pic-link" name="card-pic-link" placeholder="Ссылка на картинку с карточки">
+      </fieldset>
+      <button type="submit" class="popup__submit-button popup__submit-create-button" aria-label="Сохранить карточку в профиле">Создать</button>
+    </form>
+  </div>
   <template class="pic-gallery__cards-template">
     <li class="pic-gallery__card">
       <button type="button" class="pic-gallery__delete-button" aria-label="Удалить карточку">
