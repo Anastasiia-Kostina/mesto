@@ -31,21 +31,6 @@ const openPopupAdd = (event) => {
   popupAdd.classList.add('popup_opened');
 } 
 
-
-
-//-------works but from the second click---------
-/*const openPopup = (event) => {
-
-  editButton.onclick = function () {
-  popupEdit.classList.add('popup_opened');
-  popupInputName.value = profileInfoName.textContent;
-  popupInputOccupation.value = profileInfoOccupation.textContent;
-}
-  addCardButton.onclick = function () {
-  popupAdd.classList.add('popup_opened');
-}
-};*/
-
 //----------close buttons------------
 const closePopupEdit = (event) => {
   popupEdit.classList.remove('popup_opened');
@@ -64,25 +49,7 @@ const handleClosePopupOverlayClick = (event) => {
     return;
   }
 }
-
 //------------close buttons----------
-
-
-//----------OLD close works for edit-----------
-
-/*const closePopup = (event) => {
-  popupEdit.classList.remove('popup_opened');
-};
-
-
-const handleClosePopupOverlayClick = (event) => {
-  if (event.target === event.currentTarget) {
-    closePopup();
-  }
-  else {
-    return;
-  }
-}*/
 
 //-----------------------function popup edit start----------------------
 const handlePopupSubmit = function (event) {
@@ -148,10 +115,10 @@ const initialPicCards = [
 ]; 
 
 initialPicCards.forEach(function (element) {
-  const picGalleryCardElement = picGalleryCardTemplate.cloneNode(true);
+  const picGalleryCardElement = picGalleryCardTemplate.querySelector('.pic-gallery__card').cloneNode(true);
   
   picGalleryCardElement.querySelector('.pic-gallery__delete-button').addEventListener('click', function(event){
-    console.log();
+    picGalleryCardElement.remove();
   });
   picGalleryCardElement.querySelector('.pic-gallery__name').textContent = element.name;
   picGalleryCardElement.querySelector('.pic-gallery__image').src = element.link;
@@ -162,29 +129,5 @@ initialPicCards.forEach(function (element) {
 
   picGalleryCards.prepend(picGalleryCardElement)
 });
-
-
-//--------------------function delete button start------------
-const deleteButton = document.querySelector('.pic-gallery__delete-button');
-
-deleteButton.forEach(function(element) {
-  element.addEventListener('click', function(event){
-    /*event.target.classList.toggle('pic-gallery__like-button_active');*/
-  });
-});
-
-//------------------function delete button end---------------
-
-//---------------------function like button start-------------------
-
-/*const likeBtn = document.querySelectorAll('.pic-gallery__like-button');
-
-likeBtn.forEach(function(element) {
-  element.addEventListener('click', function(event){
-    event.target.classList.toggle('pic-gallery__like-button_active');
-  });
-});*/
-
-//---------------------function like button end------------------
 
 //--------------------template cards end------------------
