@@ -1,26 +1,28 @@
 
 //---------------popup profile edit start----------------------- 
-const popupElement = document.querySelector(".popup");
-const popupCloseBtnEdit = popupElement.querySelector(".popup__close-button_edit");//was without edit// changed into document //changed back
 const editButton = document.querySelector(".profile__edit-button");
 
-const popupFormSubmitEdit = popupElement.querySelector(".popup__submit-edit");//changed into document//changed back
+const popupElement = document.querySelector(".popup");
+const popupCloseBtnEdit = popupElement.querySelector(".popup__close-button-edit");//was without edit// changed into document //changed back
+const popupFormSubmitEdit = popupElement.querySelector(".popup__submit-button-edit");//changed into document//changed back
 const popupEdit = document.querySelector(".popup_edit");
 const popupInputName = popupElement.querySelector(".popup__input_type_name");//changed into document//changed back
 const popupInputOccupation = popupElement.querySelector(".popup__input_type_occupation");//changed into document//changed back
+
 const profileInfoName = document.querySelector(".profile__info-name");
 const profileInfoOccupation = document.querySelector(".profile__info-occupation");
 //---------------popup profile add start-----------------------
 const addCardButton = document.querySelector(".profile__add-button");
-const popupCloseBtnAdd = document.querySelector(".popup__close-button_add"); //forgot to change into document here popupElement doesn't work
-const popupFormSubmitCreate = popupElement.querySelector(".popup__submit-create"); //changed into document//changed back
+
+const popupCloseBtnAdd = document.querySelector(".popup__close-button-add"); //forgot to change into document here popupElement doesn't work
+const popupFormSubmitAdd = popupElement.querySelector(".popup__submit-button-add"); //changed into document//changed back
 const popupAdd = document.querySelector(".popup_add");
-const popupInputCardName = popupElement.querySelector(".popup__input_type_card-pic-name");//changed into document//changed back
-const popupInputCardLink = popupElement.querySelector(".popup__input_type_card-pic-link");//changed into document//changed back
+const popupInputCardName = popupElement.querySelector(".popup__input_type_card-name");//changed into document//changed back
+const popupInputCardLink = popupElement.querySelector(".popup__input_type_card-link");//changed into document//changed back
 //---------------popup profile add end-----------------------
 
 
-//---------------popups----------
+//---------------popups open-close start----------
 const openPopupEdit = (event) => {
   popupEdit.classList.add('popup_opened');
   popupInputName.value = profileInfoName.textContent;
@@ -29,6 +31,8 @@ const openPopupEdit = (event) => {
 
 const openPopupAdd = (event) => {
   popupAdd.classList.add('popup_opened');
+  popupInputCardName.value = '';
+  popupInputCardLink.value = '';
 } 
 
 //----------close buttons------------
@@ -49,21 +53,21 @@ const handleClosePopupOverlayClick = (event) => {
     return;
   }
 }
-//------------close buttons----------
+//---------------popups open-close end----------
 
 //-----------------------function popup edit start----------------------
-const handlePopupSubmit = function (event) {
+const handlePopupSubmitEdit = (event) => {
   event.preventDefault();
   profileInfoName.textContent = popupInputName.value;
   profileInfoOccupation.textContent = popupInputOccupation.value;
-  closePopupEdit(); //was closePopup
+  closePopupEdit(); //I put popupInputName, etc. into openPopupEdit
 }
 //----------------------function popup edit end-------------------
 
 editButton.addEventListener('click', openPopupEdit); //was openPopup
 popupCloseBtnEdit.addEventListener('click', closePopupEdit);//was closePopup
 //popupElement.addEventListener('click', handleClosePopupOverlayClick); //deleted b/c popupCloseBtnAdd wouldn't work
-popupFormSubmitEdit.addEventListener('click', handlePopupSubmit); //mb will be 'submit' when complete
+popupFormSubmitEdit.addEventListener('click', handlePopupSubmitEdit); //mb will be 'submit' when complete
 //---------------popup profile edit end-----------------------
 
 
@@ -114,7 +118,36 @@ const initialPicCards = [
   }
 ]; 
 
-initialPicCards.forEach(function (element) {
+//------------Add handler start-----------
+const cardEntry = {
+  name: popupInputCardName.value,
+  link: popupInputCardLink.value,
+  alt: popupInputCardName.value
+} //Now I can call it in the handler or mb not, I'll see
+
+const handlePopupSubmitAdd = (event) => {
+  event.preventDefault();
+  picGalleryCards.prepend(/*HERE*/(cardEntry)) //!!!!!!Need to put a function of creation of a card
+  closePopupAdd(); //I put popupInputName, etc. into openPopupEdit
+}
+//------------Add handler end-----------
+
+//-----------Add function that creates a card start-------
+const createCard = (element) => {
+  const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true);
+}
+
+//-----------Add function that creates a card end---------
+
+//--------------------template cards end------------------
+
+
+
+
+
+
+//-------------------works but I still think I need a function------------
+/*initialPicCards.forEach(function (element) {
   const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true);
   
   picGalleryCardElement.querySelector(".pic-gallery__delete-button").addEventListener('click', function(event){
@@ -128,6 +161,5 @@ initialPicCards.forEach(function (element) {
   });
 
   picGalleryCards.prepend(picGalleryCardElement)
-});
-
-//--------------------template cards end------------------
+});*/
+//-------------------works but I still think I need a function------------
