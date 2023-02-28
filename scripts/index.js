@@ -88,7 +88,7 @@ const handlePopupSubmitAdd = (event) => {
   };
   picGalleryCards.prepend(createCard(cardEntry)); //!!!!!!Need to put a function of creation of a card
   closePopupAdd(); //I put popupInputName, etc. into openPopupEdit
-  popupInputCardName.value = '';
+  popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
   popupInputCardLink.value = '';
 }
 //------------Add handler end-----------
