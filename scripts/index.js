@@ -1,22 +1,22 @@
 
 //---------------popup profile edit start----------------------- 
-const popupElement = document.querySelector('.popup');
-const popupCloseBtnEdit = popupElement.querySelector('.popup__close-button_edit');//was without edit// changed into document //changed back
-const editButton = document.querySelector('.profile__edit-button');
+const popupElement = document.querySelector(".popup");
+const popupCloseBtnEdit = popupElement.querySelector(".popup__close-button_edit");//was without edit// changed into document //changed back
+const editButton = document.querySelector(".profile__edit-button");
 
-const popupFormSubmitEdit = popupElement.querySelector(".popup__submit-edit-button");//changed into document//changed back
+const popupFormSubmitEdit = popupElement.querySelector(".popup__submit-edit");//changed into document//changed back
 const popupEdit = document.querySelector(".popup_edit");
-const popupInputName = popupElement.querySelector('.popup__input_type_name');//changed into document//changed back
-const popupInputOccupation = popupElement.querySelector('.popup__input_type_occupation');//changed into document//changed back
-const profileInfoName = document.querySelector('.profile__info-name');
-const profileInfoOccupation = document.querySelector('.profile__info-occupation');
+const popupInputName = popupElement.querySelector(".popup__input_type_name");//changed into document//changed back
+const popupInputOccupation = popupElement.querySelector(".popup__input_type_occupation");//changed into document//changed back
+const profileInfoName = document.querySelector(".profile__info-name");
+const profileInfoOccupation = document.querySelector(".profile__info-occupation");
 //---------------popup profile add start-----------------------
-const addCardButton = document.querySelector('.profile__add-button');
-const popupCloseBtnAdd = document.querySelector('.popup__close-button_add'); //forgot to change into document here popupElement doesn't work
-const popupFormSubmitCreate = popupElement.querySelector(".popup__submit-create-button"); //changed into document//changed back
+const addCardButton = document.querySelector(".profile__add-button");
+const popupCloseBtnAdd = document.querySelector(".popup__close-button_add"); //forgot to change into document here popupElement doesn't work
+const popupFormSubmitCreate = popupElement.querySelector(".popup__submit-create"); //changed into document//changed back
 const popupAdd = document.querySelector(".popup_add");
-const popupInputCardName = popupElement.querySelector('.popup__input_type_card-pic-name');//changed into document//changed back
-const popupInputCardLink = popupElement.querySelector('.popup__input_type_card-pic-link');//changed into document//changed back
+const popupInputCardName = popupElement.querySelector(".popup__input_type_card-pic-name");//changed into document//changed back
+const popupInputCardLink = popupElement.querySelector(".popup__input_type_card-pic-link");//changed into document//changed back
 //---------------popup profile add end-----------------------
 
 
@@ -78,8 +78,8 @@ popupAdd.addEventListener('click', handleClosePopupOverlayClick);
 
 //--------------------template cards start------------------
 
-const picGalleryCards = document.querySelector('.pic-gallery__cards'); //was openPopup
-const picGalleryCardTemplate = document.querySelector('.pic-gallery__cards-template').content;
+const picGalleryCards = document.querySelector(".pic-gallery__cards"); //was openPopup
+const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-template").content;
 
 const initialPicCards = [
   {
@@ -115,16 +115,16 @@ const initialPicCards = [
 ]; 
 
 initialPicCards.forEach(function (element) {
-  const picGalleryCardElement = picGalleryCardTemplate.querySelector('.pic-gallery__card').cloneNode(true);
+  const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true);
   
-  picGalleryCardElement.querySelector('.pic-gallery__delete-button').addEventListener('click', function(event){
+  picGalleryCardElement.querySelector(".pic-gallery__delete-button").addEventListener('click', function(event){
     picGalleryCardElement.remove();
   });
-  picGalleryCardElement.querySelector('.pic-gallery__name').textContent = element.name;
-  picGalleryCardElement.querySelector('.pic-gallery__image').src = element.link;
-  picGalleryCardElement.querySelector('.pic-gallery__image').alt = element.alt;
-  picGalleryCardElement.querySelector('.pic-gallery__like-button').addEventListener('click', function(event){
-    event.target.classList.toggle('pic-gallery__like-button_active');
+  picGalleryCardElement.querySelector(".pic-gallery__name").textContent = element.name;
+  picGalleryCardElement.querySelector(".pic-gallery__image").src = element.link;
+  picGalleryCardElement.querySelector(".pic-gallery__image").alt = element.alt;
+  picGalleryCardElement.querySelector(".pic-gallery__like-button").addEventListener('click', function(event){
+    event.target.classList.toggle("pic-gallery__like-button_active");
   });
 
   picGalleryCards.prepend(picGalleryCardElement)
