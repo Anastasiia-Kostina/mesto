@@ -1,0 +1,28 @@
+.popup__picture-zoom-container {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  top: 0; 
+  left: 0;
+  margin: 90px 0;
+  padding: 0;
+  background-color: none;
+  border: none;
+  max-width: 75vw;
+  min-width: 240px;
+  max-height: 75vh;
+  height: auto; /*important*/
+  object-fit: contain; /*important*/
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (max-width: 430px) {
+  .popup__picture-zoom-container {
+    width: 240px;
+  }
+}
