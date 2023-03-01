@@ -28,35 +28,54 @@ const popupPicZoom = document.querySelector(".popup__picture-zoom");
 const popupPicName = document.querySelector(".popup__picture-zoom-name");
 //-------------popup-pic end---------------------
 
+//---------transition Fade-in out start------------
+
+
+//---------transition Fade-in out end------------
+
 //---------------popups open-close start----------
 const openPopupEdit = (event) => {
   popupEdit.classList.add('popup_opened');
   popupInputName.value = profileInfoName.textContent;
   popupInputOccupation.value = profileInfoOccupation.textContent;
+  //popupEdit.classList.add('popup-transition-active');
+  //popupEdit.classList.remove('popup-transition-active');
 } 
 
 const openPopupAdd = (event) => {
   popupAdd.classList.add('popup_opened');
-  /*popupInputCardName.value = '';
-  popupInputCardLink.value = '';*/
+  popupInputCardName.value = '';
+  popupInputCardLink.value = '';
+  //popupAdd.classList.add('popup-transition-active');
 } 
 
 const openPopupPic = (event) => {
   popupForPic.classList.add('popup__picture_opened');
+  //popupForPic.classList.add('popup-transition-active');
 }
+
+const fadeOut = document.querySelector('.popup-transition-inactive');
+console.log('Does it work?')
 
 //----------close buttons------------
 const closePopupEdit = (event) => {
   popupEdit.classList.remove('popup_opened');
+  popupEdit.classList.remove('popup-transition-active');
+ // popupEdit.classList.remove('popup-transition-active');
+  //popupEdit.classList.add('popup-transition-inactive');
+  //return;
 };
 
 const closePopupAdd = (event) => {
   popupAdd.classList.remove('popup_opened');
+  //popupAdd.classList.remove('popup-transition-active');
+  
 };
 
 const closePopupPic = (event) => {
   popupForPic.classList.remove('popup__picture_opened');
-}
+  //popupForPic.classList.remove('popup-transition-active');
+};
 
 const handleClosePopupOverlayClick = (event) => {
   if (event.target === event.currentTarget) {
@@ -69,6 +88,12 @@ const handleClosePopupOverlayClick = (event) => {
   }
 }
 //---------------popups open-close end----------
+
+//---------transition Fade-in out start------------
+
+
+//---------transition Fade-in out end------------
+
 
 //-----------------------function popup edit start----------------------
 const handlePopupSubmitEdit = (event) => {
@@ -96,8 +121,8 @@ const handlePopupSubmitAdd = (event) => {
   };
   picGalleryCards.prepend(createCard(cardEntry)); //!!!!!!Need to put a function of creation of a card
   closePopupAdd(); //I put popupInputName, etc. into openPopupEdit; Need to try to put it back
-  popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
-  popupInputCardLink.value = '';
+  //popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
+  //popupInputCardLink.value = '';
 }
 //------------Add handler end-----------
 
