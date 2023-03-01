@@ -54,9 +54,6 @@ const openPopupPic = (event) => {
   //popupForPic.classList.add('popup-transition-active');
 }
 
-const fadeOut = document.querySelector('.popup-transition-inactive');
-console.log('Does it work?')
-
 //----------close buttons------------
 const closePopupEdit = (event) => {
   popupEdit.classList.remove('popup_opened');

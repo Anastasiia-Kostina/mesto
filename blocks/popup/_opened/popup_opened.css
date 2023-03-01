@@ -1,3 +1,5 @@
 .popup_opened {
-  display: flex;
+  /*display: flex; /*Needed when I ha display none in popup*/
+  visibility: visible;
+  opacity: 1;
 }
