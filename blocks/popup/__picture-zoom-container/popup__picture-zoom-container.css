@@ -16,6 +16,7 @@
   min-width: 240px;
   max-height: 75vh;
   height: auto; /*important*/
+  -o-object-fit: contain;
   object-fit: contain; /*important*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

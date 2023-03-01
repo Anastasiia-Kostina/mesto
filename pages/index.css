@@ -47,3 +47,4 @@
 @import url(../blocks/popup/__picture-zoom-container/popup__picture-zoom-container.css);
 @import url(../blocks/popup/__picture-zoom/popup__picture-zoom.css);
 @import url(../blocks/popup/__picture-zoom-name/popup__picture-zoom-name.css);
+@import url(../blocks/popup/__picture/_opened/popup__picture_opened.css);

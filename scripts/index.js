@@ -21,6 +21,12 @@ const popupInputCardName = document.querySelector(".popup__input_type_card-name"
 const popupInputCardLink = document.querySelector(".popup__input_type_card-link");//changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
 //---------------popup profile add end-----------------------
 
+//-------------popup-pic start--------------------
+const popupForPic = document.querySelector(".popup__picture");
+const popupCloseBtnPic = document.querySelector(".popup__close-button-pic");
+const popupPicZoom = document.querySelector(".popup__picture-zoom");
+const popupPicName = document.querySelector(".popup__picture-zoom-name");
+//-------------popup-pic end---------------------
 
 //---------------popups open-close start----------
 const openPopupEdit = (event) => {
@@ -35,6 +41,10 @@ const openPopupAdd = (event) => {
   popupInputCardLink.value = '';*/
 } 
 
+const openPopupPic = (event) => {
+  popupForPic.classList.add('popup__picture_opened');
+}
+
 //----------close buttons------------
 const closePopupEdit = (event) => {
   popupEdit.classList.remove('popup_opened');
@@ -44,10 +54,15 @@ const closePopupAdd = (event) => {
   popupAdd.classList.remove('popup_opened');
 };
 
+const closePopupPic = (event) => {
+  popupForPic.classList.remove('popup__picture_opened');
+}
+
 const handleClosePopupOverlayClick = (event) => {
   if (event.target === event.currentTarget) {
     closePopupEdit(); //was closePopup
     closePopupAdd();
+    closePopupPic();
   }
   else {
     return;
@@ -65,7 +80,6 @@ const handlePopupSubmitEdit = (event) => {
 //----------------------function popup edit end-------------------
 
 
-
 //--------------------template cards start------------------
 
 const picGalleryCards = document.querySelector(".pic-gallery__cards"); //was openPopup
@@ -73,12 +87,6 @@ const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-templ
 
 
 //------------Add handler start-----------
-/*const cardEntry = {
-  name: popupInputCardName.value,
-  link: popupInputCardLink.value,
-  alt: popupInputCardName.value
-}*/ //Now I can call it in the handler or mb not, I'll see
-
 const handlePopupSubmitAdd = (event) => {
   event.preventDefault();
   const cardEntry = {
@@ -87,7 +95,7 @@ const handlePopupSubmitAdd = (event) => {
     //alt: popupInputCardName.value
   };
   picGalleryCards.prepend(createCard(cardEntry)); //!!!!!!Need to put a function of creation of a card
-  closePopupAdd(); //I put popupInputName, etc. into openPopupEdit
+  closePopupAdd(); //I put popupInputName, etc. into openPopupEdit; Need to try to put it back
   popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
   popupInputCardLink.value = '';
 }
@@ -145,14 +153,27 @@ const createCard = (element) => {
     event.target.classList.toggle("pic-gallery__like-button_active");
   });
 
+  picGalleryCardElementPic.addEventListener('click', renderPopupForPic);
+
   return picGalleryCardElement
 }
-
-
 
 initialPicCards.forEach((element) => {
   picGalleryCards.prepend(createCard(element))
 });
+
+//------------need to connect a card and the pic-zoom start-------
+function renderPopupForPic(event) {
+  popupPicZoom.src = event.target.src;
+  popupPicZoom.alt = event.target.alt;
+  popupPicName.textContent = event.target.alt;
+  //popupPicZoom.src = event.srcElement.src; //Object oriented srcElement works but I don't quite understand it
+ // popupPicZoom.alt = event.srcElement.alt; //Object oriented srcElement works but I don't quite understand it
+  //popupPicName.textContent = event.srcElement.alt; //Object oriented srcElement works but I don't quite understand it
+  openPopupPic(popupForPic);
+}
+
+//------------need to connect a card and the pic-zoom end-------
 
 
 editButton.addEventListener('click', openPopupEdit); //was openPopup
@@ -167,10 +188,12 @@ popupCloseBtnAdd.addEventListener('click', closePopupAdd);
 
 popupEdit.addEventListener('click', handleClosePopupOverlayClick);
 popupAdd.addEventListener('click', handleClosePopupOverlayClick);
+popupForPic.addEventListener('click', handleClosePopupOverlayClick);
 //---------------popup profile add end-----------------------
 popupFormSubmitAdd.addEventListener('click', handlePopupSubmitAdd);
 
-
+//picGalleryCardElementPic.addEventListener('click', openPopupPic); //It's in a function
+popupCloseBtnPic.addEventListener('click', closePopupPic);
 
 
 //-----------Add function that creates a card end---------

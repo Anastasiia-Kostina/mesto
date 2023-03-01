@@ -1,5 +1,5 @@
 .popup__picture {
-  display: flex; /*will be none; block would be good*/
+  display: none; /*will be none; block would be good, now flex*/
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
