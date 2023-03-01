@@ -1,5 +1,5 @@
 
-//---------------popup profile edit start----------------------- 
+//---------------popup profile edit const start----------------------- 
 const editButton = document.querySelector(".profile__edit-button");
 
 const popupElement = document.querySelector(".popup");
@@ -11,7 +11,9 @@ const popupInputOccupation = popupElement.querySelector(".popup__input_type_occu
 
 const profileInfoName = document.querySelector(".profile__info-name");
 const profileInfoOccupation = document.querySelector(".profile__info-occupation");
-//---------------popup profile add start-----------------------
+//---------------popup profile edit const end----------------------- 
+
+//---------------popup profile add const start-----------------------
 const addCardButton = document.querySelector(".profile__add-button");
 
 const popupCloseBtnAdd = document.querySelector(".popup__close-button-add"); //forgot to change into document here popupElement doesn't work
@@ -19,59 +21,43 @@ const popupFormSubmitAdd = document.querySelector(".popup__submit-button-add"); 
 const popupAdd = document.querySelector(".popup_add");
 const popupInputCardName = document.querySelector(".popup__input_type_card-name");//changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
 const popupInputCardLink = document.querySelector(".popup__input_type_card-link");//changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
-//---------------popup profile add end-----------------------
+//---------------popup profile add const end-----------------------
 
-//-------------popup-pic start--------------------
+//-------------popup-pic const start--------------------
 const popupForPic = document.querySelector(".popup__picture");
 const popupCloseBtnPic = document.querySelector(".popup__close-button-pic");
 const popupPicZoom = document.querySelector(".popup__picture-zoom");
 const popupPicName = document.querySelector(".popup__picture-zoom-name");
-//-------------popup-pic end---------------------
-
-//---------transition Fade-in out start------------
-
-
-//---------transition Fade-in out end------------
+//-------------popup-pic const end---------------------
 
 //---------------popups open-close start----------
 const openPopupEdit = (event) => {
   popupEdit.classList.add('popup_opened');
   popupInputName.value = profileInfoName.textContent;
   popupInputOccupation.value = profileInfoOccupation.textContent;
-  //popupEdit.classList.add('popup-transition-active');
-  //popupEdit.classList.remove('popup-transition-active');
 } 
 
 const openPopupAdd = (event) => {
   popupAdd.classList.add('popup_opened');
-  popupInputCardName.value = '';
+  popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
   popupInputCardLink.value = '';
-  //popupAdd.classList.add('popup-transition-active');
 } 
 
 const openPopupPic = (event) => {
   popupForPic.classList.add('popup__picture_opened');
-  //popupForPic.classList.add('popup-transition-active');
 }
 
-//----------close buttons------------
 const closePopupEdit = (event) => {
   popupEdit.classList.remove('popup_opened');
   popupEdit.classList.remove('popup-transition-active');
- // popupEdit.classList.remove('popup-transition-active');
-  //popupEdit.classList.add('popup-transition-inactive');
-  //return;
 };
 
 const closePopupAdd = (event) => {
   popupAdd.classList.remove('popup_opened');
-  //popupAdd.classList.remove('popup-transition-active');
-  
 };
 
 const closePopupPic = (event) => {
   popupForPic.classList.remove('popup__picture_opened');
-  //popupForPic.classList.remove('popup-transition-active');
 };
 
 const handleClosePopupOverlayClick = (event) => {
@@ -86,12 +72,6 @@ const handleClosePopupOverlayClick = (event) => {
 }
 //---------------popups open-close end----------
 
-//---------transition Fade-in out start------------
-
-
-//---------transition Fade-in out end------------
-
-
 //-----------------------function popup edit start----------------------
 const handlePopupSubmitEdit = (event) => {
   event.preventDefault();
@@ -101,14 +81,12 @@ const handlePopupSubmitEdit = (event) => {
 }
 //----------------------function popup edit end-------------------
 
-
 //--------------------template cards start------------------
 
 const picGalleryCards = document.querySelector(".pic-gallery__cards"); //was openPopup
 const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-template").content;
 
-
-//------------Add handler start-----------
+//------------Add handler start------------------------------
 const handlePopupSubmitAdd = (event) => {
   event.preventDefault();
   const cardEntry = {
@@ -118,16 +96,14 @@ const handlePopupSubmitAdd = (event) => {
   };
   picGalleryCards.prepend(createCard(cardEntry)); //!!!!!!Need to put a function of creation of a card
   closePopupAdd(); //I put popupInputName, etc. into openPopupEdit; Need to try to put it back
-  //popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
-  //popupInputCardLink.value = '';
 }
-//------------Add handler end-----------
+//------------Add handler end-------------------------------
 
+//--------------Add cards start-----------------------------
 const initialPicCards = [
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-   // alt: 'Изображение с замёрзшим Байкалом'
+    name: 'Санкт-Петербург',
+    link: 'https://photocentra.ru/images/main68/680823_main.jpg',
   },
   {
     name: 'Холмогорский район',
@@ -155,7 +131,7 @@ const initialPicCards = [
     //alt: 'Изображение с холмами Архыза'
   }
 ]; 
-
+//--------------Add cards end-----------------------------
 
 //-----------Add function that creates a card start-------
 const createCard = (element) => {
@@ -189,58 +165,25 @@ function renderPopupForPic(event) {
   popupPicZoom.src = event.target.src;
   popupPicZoom.alt = event.target.alt;
   popupPicName.textContent = event.target.alt;
-  //popupPicZoom.src = event.srcElement.src; //Object oriented srcElement works but I don't quite understand it
- // popupPicZoom.alt = event.srcElement.alt; //Object oriented srcElement works but I don't quite understand it
-  //popupPicName.textContent = event.srcElement.alt; //Object oriented srcElement works but I don't quite understand it
   openPopupPic(popupForPic);
 }
 
 //------------need to connect a card and the pic-zoom end-------
+//-----------Add function that creates a card end-------
+//--------------------template cards end------------------
 
+//----------Listeners start----------------------------
+editButton.addEventListener('click', openPopupEdit);
+popupCloseBtnEdit.addEventListener('click', closePopupEdit);
+popupFormSubmitEdit.addEventListener('click', handlePopupSubmitEdit);
 
-editButton.addEventListener('click', openPopupEdit); //was openPopup
-popupCloseBtnEdit.addEventListener('click', closePopupEdit);//was closePopup
-//popupElement.addEventListener('click', handleClosePopupOverlayClick); //deleted b/c popupCloseBtnAdd wouldn't work
-popupFormSubmitEdit.addEventListener('click', handlePopupSubmitEdit); //mb will be 'submit' when complete
-//---------------popup profile edit end-----------------------
-
-//---------------popup profile add start-----------------------
 addCardButton.addEventListener('click', openPopupAdd);
 popupCloseBtnAdd.addEventListener('click', closePopupAdd);
+popupFormSubmitAdd.addEventListener('click', handlePopupSubmitAdd);
 
 popupEdit.addEventListener('click', handleClosePopupOverlayClick);
 popupAdd.addEventListener('click', handleClosePopupOverlayClick);
 popupForPic.addEventListener('click', handleClosePopupOverlayClick);
-//---------------popup profile add end-----------------------
-popupFormSubmitAdd.addEventListener('click', handlePopupSubmitAdd);
 
-//picGalleryCardElementPic.addEventListener('click', openPopupPic); //It's in a function
 popupCloseBtnPic.addEventListener('click', closePopupPic);
-
-
-//-----------Add function that creates a card end---------
-
-//--------------------template cards end------------------
-
-
-
-
-
-
-//-------------------works but I still think I need a function------------
-/*initialPicCards.forEach(function (element) {
-  const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true);
-  
-  picGalleryCardElement.querySelector(".pic-gallery__delete-button").addEventListener('click', function(event){
-    picGalleryCardElement.remove();
-  });
-  picGalleryCardElement.querySelector(".pic-gallery__name").textContent = element.name;
-  picGalleryCardElement.querySelector(".pic-gallery__image").src = element.link;
-  picGalleryCardElement.querySelector(".pic-gallery__image").alt = element.alt;
-  picGalleryCardElement.querySelector(".pic-gallery__like-button").addEventListener('click', function(event){
-    event.target.classList.toggle("pic-gallery__like-button_active");
-  });
-
-  picGalleryCards.prepend(picGalleryCardElement)
-});*/
-//-------------------works but I still think I need a function------------
+//----------Listeners end----------------------------

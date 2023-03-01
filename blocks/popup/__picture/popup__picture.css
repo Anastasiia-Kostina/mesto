@@ -1,4 +1,6 @@
 .popup__picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; /*I don't need none as I have changed the visibility*/
   -webkit-box-pack: center;
   -ms-flex-pack: center;

@@ -1,7 +1,0 @@
-.popup-transition-active {
- /*-webkit-animation: popup-active 1s forwards;
-  animation: popup-active 1s forwards;*/
-  transition: all 1s ease;
-  visibility: visible;
-  opacity: 1;
-}
