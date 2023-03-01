@@ -1,5 +1,5 @@
 .popup__picture_opened {
-  /*display: flex; Needed when I ha display none in popup*/
+  /*display: flex; Needed when I had display none in popup*/
   visibility: visible;
   opacity: 1;
 }

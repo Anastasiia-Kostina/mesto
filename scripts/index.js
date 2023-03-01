@@ -92,10 +92,9 @@ const handlePopupSubmitAdd = (event) => {
   const cardEntry = {
     name: popupInputCardName.value,
     link: popupInputCardLink.value
-    //alt: popupInputCardName.value
   };
-  picGalleryCards.prepend(createCard(cardEntry)); //!!!!!!Need to put a function of creation of a card
-  closePopupAdd(); //I put popupInputName, etc. into openPopupEdit; Need to try to put it back
+  picGalleryCards.prepend(createCard(cardEntry)); //Need to put a function of creation of a card
+  closePopupAdd();
 }
 //------------Add handler end-------------------------------
 

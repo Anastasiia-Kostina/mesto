@@ -1,10 +1,7 @@
 .popup {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; /*I don't need none as I have changed the visibility*/
-  /*animate has problems working with display*/
-  /*It works but when I open the instruments, 
-  it sometimes shows the popups right after reloading and it drives me mad!!!!!!!!*/
+  display: flex; /*I don't need none as I have changed the visibility*/ /*animate has problems working with display*/
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;

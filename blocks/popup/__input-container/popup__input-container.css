@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 19px 0 0 0; /*need 54 in the layout...*/ /*720 49*/
+  margin: 19px 0 0 0;
   padding: 0;
   width: 100%;
   border: none;
