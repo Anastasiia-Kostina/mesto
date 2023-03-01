@@ -1,0 +1,19 @@
+.popup-picture__zoom-name {
+  margin: 10px 0 0;
+  padding: 0;
+  width: 22.74vw;
+  min-width: 240px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  z-index: 51;
+  }
+  
+  @media (max-width: 430px) {
+    .popup-picture__zoom-name {
+      width: 240px;
+    }
+  }

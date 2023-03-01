@@ -24,10 +24,10 @@ const popupInputCardLink = document.querySelector(".popup__input_type_card-link"
 //---------------popup profile add const end-----------------------
 
 //-------------popup-pic const start--------------------
-const popupForPic = document.querySelector(".popup__picture");
-const popupCloseBtnPic = document.querySelector(".popup__close-button-pic");
-const popupPicZoom = document.querySelector(".popup__picture-zoom");
-const popupPicName = document.querySelector(".popup__picture-zoom-name");
+const popupForPic = document.querySelector(".popup-picture");
+const popupCloseBtnPic = document.querySelector(".popup-picture__close-button");
+const popupPicZoom = document.querySelector(".popup-picture__zoom");
+const popupPicName = document.querySelector(".popup-picture__zoom-name");
 //-------------popup-pic const end---------------------
 
 //---------------popups open-close start----------
@@ -44,7 +44,7 @@ const openPopupAdd = (event) => {
 } 
 
 const openPopupPic = (event) => {
-  popupForPic.classList.add('popup__picture_opened');
+  popupForPic.classList.add('popup-picture_opened');
 }
 
 const closePopupEdit = (event) => {
@@ -57,7 +57,7 @@ const closePopupAdd = (event) => {
 };
 
 const closePopupPic = (event) => {
-  popupForPic.classList.remove('popup__picture_opened');
+  popupForPic.classList.remove('popup-picture_opened');
 };
 
 const handleClosePopupOverlayClick = (event) => {
