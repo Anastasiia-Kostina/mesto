@@ -4,7 +4,8 @@ const btnEditProfile = document.querySelector(".profile__edit-button");
 
 //const popupElement = document.querySelector(".popup"); I don't think I need it at this step
 const popupCloseBtnEditProfile = document.querySelector(".popup__close-button-edit");//was without edit// changed into document //changed back
-const popupFormSubmitEditProfile = document.querySelector(".popup__submit-button-edit");//changed into document//changed back
+//const popupFormSubmitEditProfile = document.querySelector(".popup__submit-button-edit");//changed into document//changed back
+const popupFormSubmitEditProfile = document.querySelector(".popup__form_edit-profile"); //!!!!!not the button, the form! Otherwise, submit doesn't work!
 const popupEditProfile = document.querySelector(".popup_edit");
 const popupInputName = document.querySelector(".popup__input_type_name");//changed into document//changed back
 const popupInputOccupation = document.querySelector(".popup__input_type_occupation");//changed into document//changed back
@@ -17,7 +18,8 @@ const profileInfoOccupation = document.querySelector(".profile__info-occupation"
 const btnAddCard = document.querySelector(".profile__add-button");
 
 const popupCloseBtnAddCard = document.querySelector(".popup__close-button-add"); //forgot to change into document here popupElement doesn't work
-const popupFormSubmitAddCard = document.querySelector(".popup__submit-button-add"); //changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
+//const popupFormSubmitAddCard = document.querySelector(".popup__submit-button-add"); //changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
+const popupFormSubmitAddCard = document.querySelector(".popup__form_add-card");//!!!!!not the button, the form! Otherwise, submit doesn't work!
 const popupAddCard = document.querySelector(".popup_add");
 const popupInputCardName = document.querySelector(".popup__input_type_card-name");//changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
 const popupInputCardLink = document.querySelector(".popup__input_type_card-link");//changed into document//changed back//NEVER CHANGE BACK!!!!!!!!!!
@@ -31,45 +33,66 @@ const popupPicName = document.querySelector(".popup-picture__zoom-name");
 //-------------popup-pic const end---------------------
 
 //---------------popups open-close start----------
+function openPopup (element) {
+ // element.classList.add('popup_opened');
+  element.classList.add('popup-picture_opened'); //How on Earth does it work?!
+  //openPopup.reset();
+}
+
+function closePopup (element) {
+ // element.classList.remove('popup_opened');
+  element.classList.remove('popup-picture_opened');//How on Earth does it work?! 
+  //But it doesn't work with popup_opened for everything... 
+  //BEM, I think it's about BEM...
+}
+
+
 const openPopupEditProfile = (event) => {
-  popupEditProfile.classList.add('popup_opened');
+ // popupEditProfile.classList.add('popup_opened');
   popupInputName.value = profileInfoName.textContent;
   popupInputOccupation.value = profileInfoOccupation.textContent;
+  openPopup (popupEditProfile);
 } 
 
 const openPopupAddCard = (event) => {
-  popupAddCard.classList.add('popup_opened');
+  //popupAddCard.classList.add('popup_opened');
+  openPopup (popupAddCard);
   popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
   popupInputCardLink.value = '';
 } 
 
 const openPopupForZoomPic = (event) => {
-  popupForZoomPic.classList.add('popup-picture_opened');
+  //popupForZoomPic.classList.add('popup-picture_opened');
+  openPopup(popupForZoomPic);
 }
 
 const closePopupEditProfile = (event) => {
-  popupEditProfile.classList.remove('popup_opened');
-  popupEditProfile.classList.remove('popup-transition-active');
+  //popupEditProfile.classList.remove('popup_opened');
+  closePopup (popupEditProfile);
 };
 
 const closePopupAddCard = (event) => {
-  popupAddCard.classList.remove('popup_opened');
+  //popupAddCard.classList.remove('popup_opened');
+  closePopup (popupAddCard);
 };
 
 const closePopupForZoomPic = (event) => {
-  popupForZoomPic.classList.remove('popup-picture_opened');
+  //popupForZoomPic.classList.remove('popup-picture_opened');
+  closePopup(popupForZoomPic);
 };
 
 const handleClosePopupOverlayClick = (event) => {
   if (event.target === event.currentTarget) {
-    closePopupEditProfile();
-    closePopupAddCard();
-    closePopupForZoomPic();
+    //closePopupEditProfile();
+    //closePopupAddCard();
+    //closePopupForZoomPic();
+    closePopup(event.currentTarget);
   }
   else {
     return;
   }
 }
+
 //---------------popups open-close end----------
 
 //-----------------------function popup edit start----------------------
@@ -89,12 +112,14 @@ const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-templ
 //------------Add handler start------------------------------
 const handlePopupSubmitAddCard = (event) => { //Doesn't quite work with submit yet
   event.preventDefault();
+  console.log(event.defaultPrevented);
   const cardEntry = {
     name: popupInputCardName.value,
     link: popupInputCardLink.value
   };
   picGalleryCardsContainer.prepend(createCard(cardEntry)); //Need to put a function of creation of a card
   closePopupAddCard();
+  //event.target.reset(); Calling the reset() method on a collection of elements instead of a form element?
 }
 //------------Add handler end-------------------------------
 
@@ -118,7 +143,7 @@ const createCard = (element) => {
 
   picGalleryCardElementPic.addEventListener('click', renderPopupForZoomPic);
 
-  return picGalleryCardElement
+  return picGalleryCardElement;
 }
 
 initialPicCards.forEach((element) => {
@@ -130,8 +155,9 @@ function renderPopupForZoomPic(event) {
   popupPicZoom.src = event.target.src;
   popupPicZoom.alt = event.target.alt;
   popupPicName.textContent = event.target.alt;
-  openPopupForZoomPic(popupForZoomPic);
+  openPopup(popupForZoomPic);
 }
+
 
 //------------need to connect a card and the pic-zoom end-------
 //-----------Add function that creates a card end-------
@@ -140,11 +166,11 @@ function renderPopupForZoomPic(event) {
 //----------Listeners start----------------------------
 btnEditProfile.addEventListener('click', openPopupEditProfile);
 popupCloseBtnEditProfile.addEventListener('click', closePopupEditProfile);
-popupFormSubmitEditProfile.addEventListener('click', handlePopupSubmitEditProfile);
+popupFormSubmitEditProfile.addEventListener('submit', handlePopupSubmitEditProfile);
 
 btnAddCard.addEventListener('click', openPopupAddCard);
 popupCloseBtnAddCard.addEventListener('click', closePopupAddCard);
-popupFormSubmitAddCard.addEventListener('click', handlePopupSubmitAddCard);
+popupFormSubmitAddCard.addEventListener('submit', handlePopupSubmitAddCard);
 
 popupEditProfile.addEventListener('click', handleClosePopupOverlayClick);
 popupAddCard.addEventListener('click', handleClosePopupOverlayClick);
