@@ -32,16 +32,21 @@ const popupPicZoom = document.querySelector(".popup-picture__zoom");
 const popupPicName = document.querySelector(".popup-picture__zoom-name");
 //-------------popup-pic const end---------------------
 
+//-------------createCard const start----------------- 
+const picGalleryCardsContainer = document.querySelector(".pic-gallery__cards"); //was openPopup
+const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-template").content; //Not sure if that change was meant (remarque 10)
+//------------create const end------------------------
+
 //---------------popups open-close start----------
-function openPopup (element) {
+function openPopup (openPopupArea) {
  // element.classList.add('popup_opened');
-  element.classList.add('popup-picture_opened'); //How on Earth does it work?!
+ openPopupArea.classList.add('popup-picture_opened'); //How on Earth does it work?!
   //openPopup.reset();
 }
 
-function closePopup (element) {
+function closePopup (closePopupArea) {
  // element.classList.remove('popup_opened');
-  element.classList.remove('popup-picture_opened');//How on Earth does it work?! 
+ closePopupArea.classList.remove('popup-picture_opened');//How on Earth does it work?! 
   //But it doesn't work with popup_opened for everything... 
   //BEM, I think it's about BEM...
 }
@@ -57,8 +62,8 @@ const openPopupEditProfile = (event) => {
 const openPopupAddCard = (event) => {
   //popupAddCard.classList.add('popup_opened');
   openPopup (popupAddCard);
-  popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
-  popupInputCardLink.value = '';
+  //popupInputCardName.value = ''; //To reset the parameters in the popup after adding a card
+  //popupInputCardLink.value = '';
 } 
 
 const openPopupForZoomPic = (event) => {
@@ -105,10 +110,6 @@ const handlePopupSubmitEditProfile = (event) => { //Doesn't quite work with subm
 //----------------------function popup edit end-------------------
 
 //--------------------template cards start------------------
-
-const picGalleryCardsContainer = document.querySelector(".pic-gallery__cards"); //was openPopup
-const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-template").content;
-
 //------------Add handler start------------------------------
 const handlePopupSubmitAddCard = (event) => { //Doesn't quite work with submit yet
   event.preventDefault();
@@ -119,13 +120,13 @@ const handlePopupSubmitAddCard = (event) => { //Doesn't quite work with submit y
   };
   picGalleryCardsContainer.prepend(createCard(cardEntry)); //Need to put a function of creation of a card
   closePopupAddCard();
-  //event.target.reset(); Calling the reset() method on a collection of elements instead of a form element?
+  event.target.reset(); //Calling the reset() method on a collection of elements instead of a form element?
 }
 //------------Add handler end-------------------------------
 
 //-----------Add function that creates a card start-------
-const createCard = (element) => {
-  const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true);
+const createCard = (cardData) => {
+  const picGalleryCardElement = picGalleryCardTemplate.querySelector(".pic-gallery__card").cloneNode(true); //Not sure if that change was meant (remarque 10)
   const picGalleryCardElementPic = picGalleryCardElement.querySelector(".pic-gallery__image");
   const picGalleryCardElementName = picGalleryCardElement.querySelector(".pic-gallery__name");
 
@@ -133,32 +134,35 @@ const createCard = (element) => {
     picGalleryCardElement.remove();
   });
 
-  picGalleryCardElementPic.src = element.link;
-  picGalleryCardElementName.textContent = element.name;
-  picGalleryCardElementPic.alt = element.name;
+  picGalleryCardElementPic.src = cardData.link;
+  picGalleryCardElementName.textContent = cardData.name;
+  picGalleryCardElementPic.alt = cardData.name;
 
-  picGalleryCardElement.querySelector(".pic-gallery__like-button").addEventListener('click', function(event){
-    event.target.classList.toggle("pic-gallery__like-button_active");
-  });
+  picGalleryCardElement.querySelector(".pic-gallery__like-button").addEventListener('click', handleLikeBtn);
 
   picGalleryCardElementPic.addEventListener('click', renderPopupForZoomPic);
 
   return picGalleryCardElement;
 }
 
+//-------------like button function start---------------
+function handleLikeBtn (event) {
+event.target.classList.toggle("pic-gallery__like-button_active");
+}
+//-------------like button function end-----------------
+
 initialPicCards.forEach((element) => {
   picGalleryCardsContainer.prepend(createCard(element))
 });
 
 //------------need to connect a card and the pic-zoom start-------
+
 function renderPopupForZoomPic(event) {
   popupPicZoom.src = event.target.src;
   popupPicZoom.alt = event.target.alt;
   popupPicName.textContent = event.target.alt;
   openPopup(popupForZoomPic);
 }
-
-
 //------------need to connect a card and the pic-zoom end-------
 //-----------Add function that creates a card end-------
 //--------------------template cards end------------------
