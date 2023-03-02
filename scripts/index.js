@@ -2,7 +2,6 @@
 //---------------popup profile edit const start----------------------- 
 const btnEditProfile = document.querySelector(".profile__edit-button");
 
-//const popupElement = document.querySelector(".popup"); I don't think I need it at this step
 const popupCloseBtnEditProfile = document.querySelector(".popup__close-button-edit");//was without edit// changed into document //changed back
 //const popupFormSubmitEditProfile = document.querySelector(".popup__submit-button-edit");//changed into document//changed back
 const popupFormSubmitEditProfile = document.querySelector(".popup__form_edit-profile"); //!!!!!not the button, the form! Otherwise, submit doesn't work!
