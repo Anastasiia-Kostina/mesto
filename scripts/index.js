@@ -73,7 +73,7 @@ const handleClosePopupOverlayClick = (event) => {
 //---------------popups open-close end----------
 
 //-----------------------function popup edit start----------------------
-const handlePopupSubmitEditProfile = (event) => {
+const handlePopupSubmitEditProfile = (event) => { //Doesn't quite work with submit yet
   event.preventDefault();
   profileInfoName.textContent = popupInputName.value;
   profileInfoOccupation.textContent = popupInputOccupation.value;
@@ -87,7 +87,7 @@ const picGalleryCardsContainer = document.querySelector(".pic-gallery__cards"); 
 const picGalleryCardTemplate = document.querySelector(".pic-gallery__cards-template").content;
 
 //------------Add handler start------------------------------
-const handlePopupSubmitAddCard = (event) => {
+const handlePopupSubmitAddCard = (event) => { //Doesn't quite work with submit yet
   event.preventDefault();
   const cardEntry = {
     name: popupInputCardName.value,
@@ -140,11 +140,11 @@ function renderPopupForZoomPic(event) {
 //----------Listeners start----------------------------
 btnEditProfile.addEventListener('click', openPopupEditProfile);
 popupCloseBtnEditProfile.addEventListener('click', closePopupEditProfile);
-popupFormSubmitEditProfile.addEventListener('submit', handlePopupSubmitEditProfile);
+popupFormSubmitEditProfile.addEventListener('click', handlePopupSubmitEditProfile);
 
 btnAddCard.addEventListener('click', openPopupAddCard);
 popupCloseBtnAddCard.addEventListener('click', closePopupAddCard);
-popupFormSubmitAddCard.addEventListener('submit', handlePopupSubmitAddCard);
+popupFormSubmitAddCard.addEventListener('click', handlePopupSubmitAddCard);
 
 popupEditProfile.addEventListener('click', handleClosePopupOverlayClick);
 popupAddCard.addEventListener('click', handleClosePopupOverlayClick);
