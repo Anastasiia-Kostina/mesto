@@ -46,6 +46,5 @@
 
 /*popup picture zoom*/
 @import url(../blocks/popup-picture/__zoom-container/popup-picture__zoom-container.css);
-@import url(../blocks/popup-picture/__close-button/popup-picture__close-button.css);
 @import url(../blocks/popup-picture/__zoom/popup-picture__zoom.css);
 @import url(../blocks/popup-picture/__zoom-name/popup-picture__zoom-name.css);

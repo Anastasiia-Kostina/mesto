@@ -35,9 +35,6 @@ const popupInputCardLink = document.querySelector(
 
 //-------------popup-pic const start--------------------
 const popupForZoomPic = document.querySelector(".popup-picture");
-const popupCloseBtnZoomPic = document.querySelector(
-  ".popup-picture__close-button"
-);
 const popupPicZoom = document.querySelector(".popup-picture__zoom");
 const popupPicName = document.querySelector(".popup-picture__zoom-name");
 //-------------popup-pic const end---------------------
@@ -46,16 +43,16 @@ const popupPicName = document.querySelector(".popup-picture__zoom-name");
 const picGalleryCardsContainer = document.querySelector(".pic-gallery__cards");
 const picGalleryCardTemplate = document.querySelector(
   ".pic-gallery__cards-template"
-).content; //Couldn't find the right way to change it
+).content;
 //------------create const end------------------------
 
 //---------------popups open-close start----------
 function openPopup(openPopupArea) {
-  openPopupArea.classList.add("popup_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
+  openPopupArea.classList.add("popup_opened");
 }
 
 function closePopup(closePopupArea) {
-  closePopupArea.classList.remove("popup_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
+  closePopupArea.classList.remove("popup_opened");
 }
 
 const openPopupEditProfile = (event) => {
@@ -80,12 +77,8 @@ const closePopupAddCard = (event) => {
   closePopup(popupAddCard);
 };
 
-const closePopupForZoomPic = (event) => {
-  closePopup(popupForZoomPic);
-};
-
-const handleClosePopupOverlayClick = (event) => {
-  if (event.target === event.currentTarget) {
+const handleClosePopupOnClick = (event) => {
+  if (event.target === event.currentTarget || event.target.classList.contains('popup__close-button')) {
     closePopup(event.currentTarget);
   } else {
     return;
@@ -121,7 +114,7 @@ const handlePopupSubmitAddCard = (event) => {
 const createCard = (cardData) => {
   const picGalleryCardElement = picGalleryCardTemplate
     .querySelector(".pic-gallery__card")
-    .cloneNode(true); //Not sure if that change was meant (remarque 10)
+    .cloneNode(true);
   const picGalleryCardElementPic = picGalleryCardElement.querySelector(
     ".pic-gallery__image"
   );
@@ -181,9 +174,7 @@ btnAddCard.addEventListener("click", openPopupAddCard);
 popupCloseBtnAddCard.addEventListener("click", closePopupAddCard);
 popupFormSubmitAddCard.addEventListener("submit", handlePopupSubmitAddCard);
 
-popupEditProfile.addEventListener("click", handleClosePopupOverlayClick);
-popupAddCard.addEventListener("click", handleClosePopupOverlayClick);
-popupForZoomPic.addEventListener("click", handleClosePopupOverlayClick);
-
-popupCloseBtnZoomPic.addEventListener("click", closePopupForZoomPic);
+popupEditProfile.addEventListener("click", handleClosePopupOnClick);
+popupAddCard.addEventListener("click", handleClosePopupOnClick);
+popupForZoomPic.addEventListener("click", handleClosePopupOnClick);
 //----------Listeners end----------------------------
