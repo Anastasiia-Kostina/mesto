@@ -78,7 +78,10 @@ const closePopupAddCard = (event) => {
 };
 
 const handleClosePopupOnClick = (event) => {
-  if (event.target === event.currentTarget || event.target.classList.contains('popup__close-button')) {
+  if (
+    event.target === event.currentTarget ||
+    event.target.classList.contains("popup__close-button")
+  ) {
     closePopup(event.currentTarget);
   } else {
     return;
@@ -134,7 +137,9 @@ const createCard = (cardData) => {
     .querySelector(".pic-gallery__like-button")
     .addEventListener("click", handleLikeBtn);
 
-  picGalleryCardElementPic.addEventListener("click", () => renderPopupForZoomPic(name, link)); //It works but why is the name crossed?
+  picGalleryCardElementPic.addEventListener("click", () =>
+    renderPopupForZoomPic(name, link)
+  ); //It works but why is the name crossed?
 
   return picGalleryCardElement;
 };
