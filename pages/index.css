@@ -42,10 +42,9 @@
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
+@import url(../blocks/popup/_type/popup_type_picture.css);
 
 /*popup picture zoom*/
-@import url(../blocks/popup-picture/popup-picture.css);
-@import url(../blocks/popup-picture/_opened/popup-picture_opened.css);
 @import url(../blocks/popup-picture/__zoom-container/popup-picture__zoom-container.css);
 @import url(../blocks/popup-picture/__close-button/popup-picture__close-button.css);
 @import url(../blocks/popup-picture/__zoom/popup-picture__zoom.css);

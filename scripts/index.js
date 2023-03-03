@@ -51,11 +51,11 @@ const picGalleryCardTemplate = document.querySelector(
 
 //---------------popups open-close start----------
 function openPopup(openPopupArea) {
-  openPopupArea.classList.add("popup-picture_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
+  openPopupArea.classList.add("popup_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
 }
 
 function closePopup(closePopupArea) {
-  closePopupArea.classList.remove("popup-picture_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
+  closePopupArea.classList.remove("popup_opened"); //DKW, but it doesn't work with popup_opened. I think it's about BEM...
 }
 
 const openPopupEditProfile = (event) => {
