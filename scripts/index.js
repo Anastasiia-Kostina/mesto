@@ -99,7 +99,6 @@ const handlePopupSubmitEditProfile = (event) => {
 //------------Add handler start------------------------------
 const handlePopupSubmitAddCard = (event) => {
   event.preventDefault();
-  console.log(event.defaultPrevented);
   const cardEntry = {
     name: popupInputCardName.value,
     link: popupInputCardLink.value,
@@ -135,7 +134,7 @@ const createCard = (cardData) => {
     .querySelector(".pic-gallery__like-button")
     .addEventListener("click", handleLikeBtn);
 
-  picGalleryCardElementPic.addEventListener("click", renderPopupForZoomPic);
+  picGalleryCardElementPic.addEventListener("click", () => renderPopupForZoomPic(name, link)); //It works but why is the name crossed?
 
   return picGalleryCardElement;
 };
@@ -152,10 +151,10 @@ initialPicCards.forEach((element) => {
 //--------------forEach for cards end-------------------
 
 //------------need to connect a card and the pic-zoom start-------
-function renderPopupForZoomPic(event) {
-  popupPicZoom.src = event.target.src;
-  popupPicZoom.alt = event.target.alt;
-  popupPicName.textContent = event.target.alt;
+function renderPopupForZoomPic(name, link) {
+  popupPicZoom.src = link.target.src;
+  popupPicZoom.alt = link.target.alt;
+  popupPicName.textContent = name.target.alt;
   openPopup(popupForZoomPic);
 }
 //------------need to connect a card and the pic-zoom end-------
