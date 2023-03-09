@@ -13,15 +13,17 @@ function disableSubmitBtn(eventDisable) { //1 step disable the submit btn
 }
 
 function enableValidation(configForm) {
-  const form = document.querySelector(configForm.formSelector); //looking for a form '.popup__form', create a list of objects
+  const formList = Array.from(document.querySelectorAll(configForm.formSelector)); //looking for all the forms now '.popup__form', create a list of objects
   
-  form.addEventListener('submit', disableSubmitBtn);
-  form.addEventListener('input', () => {
-    toggleSubmitButton(form, configForm);
+  formList.forEach((form) => {
+    form.addEventListener('submit', disableSubmitBtn);
+    form.addEventListener('input', () => {
+      toggleSubmitButton(form, configForm);
   });
 
-  addInputListeners(form, configForm); // to find all the input of a form
-  toggleSubmitButton(form, configForm); //to turn off submit from the start
+    addInputListeners(form, configForm); // to find all the input of a form
+    toggleSubmitButton(form, configForm); //to turn off submit from the start
+  }); 
 }
 
 function handleFormInputValidity(eventInputTarget, configForm) { //to know where an event took its place
