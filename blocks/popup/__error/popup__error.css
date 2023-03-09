@@ -1,0 +1,16 @@
+.popup__error {
+  /*opacity: 0;*/
+  display: block;
+  margin: 0 0 10px 0;
+  padding: 3px 0 0; /*5*/
+  max-width: 358px;
+  min-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.95;/*1.25*/
+  color: #FF0000;
+  border: none;
+  transition: opacity 0.3s;
+  box-sizing: border-box;
+}

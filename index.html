@@ -43,23 +43,61 @@
     <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
   </footer>
   <div class="popup popup_edit">
-    <form class="popup__form popup__form_edit-profile" name="FormEdit">
+    <form class="popup__form popup__form_edit-profile" name="FormEdit" novalidate>
       <button type="button" class="popup__close-button popup__close-button-edit button-transition" aria-label="Закрыть область редактирования профиля"></button>
       <h2 class="popup__header">Редактировать профиль</h2>
       <fieldset class="popup__input-container" name="profile-info">
-        <input type="text" class="popup__input popup__input_type_name" name="name" placeholder="Имя" required>
-        <input type="text" class="popup__input popup__input_type_occupation" name="occupation" placeholder="Род занятий" required>
+        <input 
+        id="profile-name" 
+        type="text" 
+        class="popup__input popup__input_type_name" 
+        name="name" 
+        placeholder="Имя" 
+        minlength="2"
+        maxlength="40" 
+        value="Жак-Ив Кусто" 
+        required> <!--I need value so that the submit button works from the start as we already have some info there-->
+        <span class="popup__input popup__error popup__error_visible" id="profile-name-error"></span>
+
+        <input 
+        id="profile-occupation" 
+        type="text" 
+        class="popup__input popup__input_type_occupation" 
+        name="occupation" 
+        placeholder="Род занятий" 
+        minlength="2"
+        maxlength="200" 
+        value="Исследователь океана" 
+        required> <!--I need value so that the submit button works from the start as we already have some info there-->
+        <span class="popup__input popup__error popup__error_visible" id="profile-occupation-error"></span>
       </fieldset>
       <button type="submit" class="popup__submit-button popup__submit-button-edit" aria-label="Сохранить информацию в профиле">Сохранить</button>
     </form>
   </div>
   <div class="popup popup_add">
-    <form class="popup__form popup__form_add-card" name="FormAdd">
+    <form class="popup__form popup__form_add-card" name="FormAdd" novalidate>
       <button type="button" class="popup__close-button popup__close-button-add button-transition" aria-label="Закрыть область добавления картотчки с фото в галерею"></button>
       <h2 class="popup__header">Новое место</h2>
       <fieldset class="popup__input-container" name="gallery-card-info">
-        <input type="text" class="popup__input popup__input_type_card-name" name="card-name" placeholder="Название" required>
-        <input type="url" class="popup__input popup__input_type_card-link" name="card-link" placeholder="Ссылка на картинку" required>
+        <input 
+        id="gallery-card-name" 
+        type="text" 
+        class="popup__input popup__input_type_card-name" 
+        name="card-name" 
+        placeholder="Название" 
+        minlength="2"
+        maxlength="30" 
+        required>
+        <span class="popup__input popup__error popup__error_visible" id="gallery-card-name-error"></span>
+
+        <input 
+        id="gallery-card-link" 
+        type="url" 
+        class="popup__input popup__input_type_card-link" 
+        name="card-link" 
+        placeholder="Ссылка на картинку" 
+        required>
+        <span class="popup__input popup__error popup__error_visible" id="gallery-card-link-error"></span>
       </fieldset>
       <button type="submit" class="popup__submit-button popup__submit-button-add" aria-label="Сохранить карточку в профиле">Создать</button>
     </form>
@@ -85,6 +123,7 @@
     </li>
   </template>
   <script src="./scripts/cards-data.js"></script>
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
