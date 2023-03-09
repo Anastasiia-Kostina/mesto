@@ -16,15 +16,19 @@ function enableValidation(configForm) {
   const formList = Array.from(document.querySelectorAll(configForm.formSelector)); //looking for all the forms now '.popup__form', create a list of objects
   
   formList.forEach((form) => {
-    form.addEventListener('submit', disableSubmitBtn);
-    form.addEventListener('input', () => {
-      toggleSubmitButton(form, configForm);
+    enableFormValidation (form, configForm) 
+  }); 
+}
+
+function enableFormValidation (form, configForm) {
+  form.addEventListener('submit', disableSubmitBtn);
+  form.addEventListener('input', () => {
+    toggleSubmitButton(form, configForm);
   });
 
     addInputListeners(form, configForm); // to find all the input of a form
     toggleSubmitButton(form, configForm); //to turn off submit from the start
-  }); 
-}
+} // separate function; to search for each form and do actions needed;
 
 function handleFormInputValidity(eventInputTarget, configForm) { //to know where an event took its place
   const inputForm = eventInputTarget.target;
