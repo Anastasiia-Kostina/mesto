@@ -1,4 +1,9 @@
-<!---->
+<!--Доброе утро! Во многом благодаря одному из лайв-кодингов, удалось максимально
+быстро написать валидацию. Постаралась сохранить пропорции формы, хоть и костыльно. 
+Esc вроде бы тоже работает, хотя не оставляет покоя мысль, что можно универсальнее, но
+мозгу нужно чуть поспать. Более чем готова к исправлениям, но очень поджимает время
+(дедлайн 11.03) и если есть возможность, кидайте на меня все ошибки, попытаюсь 
+исправить по максимуму. Хорошего дня!-->
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -54,7 +59,7 @@
         minlength="2"
         maxlength="40" 
         value="Жак-Ив Кусто" 
-        required> <!--I need value so that the submit button works from the start as we already have some info there-->
+        required> <!--value is valid-->
         <span class="popup__input popup__error popup__error_visible" id="profile-name-error"></span>
 
         <input 
@@ -66,7 +71,7 @@
         minlength="2"
         maxlength="200" 
         value="Исследователь океана" 
-        required> <!--I need value so that the submit button works from the start as we already have some info there-->
+        required> <!--value is valid-->
         <span class="popup__input popup__error popup__error_visible" id="profile-occupation-error"></span>
       </fieldset>
       <button type="submit" class="popup__submit-button popup__submit-button-edit" aria-label="Сохранить информацию в профиле">Сохранить</button>

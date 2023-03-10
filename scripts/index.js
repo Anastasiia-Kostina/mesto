@@ -94,7 +94,6 @@ const handleClosePopupOnClick = (event) => {
 //---------------close popup with Esc start-------------
 const handleClosePopupOnEsc = (clickKey) => {
   if (clickKey.key === "Escape") {
-    //console.log(clickKey); //works
     const popupActive = document.querySelector(".popup_opened");
     closePopup(popupActive);
   }
