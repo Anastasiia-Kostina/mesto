@@ -44,15 +44,17 @@ const picGalleryCardsContainer = document.querySelector(".pic-gallery__cards");
 const picGalleryCardTemplate = document.querySelector(
   ".pic-gallery__cards-template"
 ).content;
-//------------create const end------------------------
+//------------createCard const end------------------------
 
 //---------------popups open-close start----------
 function openPopup(openPopupArea) {
   openPopupArea.classList.add("popup_opened");
+  window.addEventListener("keydown", handleClosePopupOnEsc);
 }
 
 function closePopup(closePopupArea) {
   closePopupArea.classList.remove("popup_opened");
+  window.removeEventListener("keydown", handleClosePopupOnEsc);
 }
 
 const openPopupEditProfile = (event) => {
@@ -88,6 +90,16 @@ const handleClosePopupOnClick = (event) => {
   }
 };
 //---------------popups open-close end----------
+
+//---------------close popup with Esc start-------------
+const handleClosePopupOnEsc = (clickKey) => {
+  if (clickKey.key === "Escape") {
+    //console.log(clickKey); //works
+    const popupActive = document.querySelector(".popup_opened");
+    closePopup(popupActive);
+  }
+};
+//--------------close popup with Esc end-------------
 
 //-----------------------function popup edit start----------------------
 const handlePopupSubmitEditProfile = (event) => {
@@ -141,6 +153,7 @@ const createCard = (cardData) => {
 
   return picGalleryCardElement;
 };
+
 //-------------like button function start---------------
 function handleLikeBtn(event) {
   event.target.classList.toggle("pic-gallery__like-button_active");
