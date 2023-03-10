@@ -32,11 +32,12 @@ function enableFormValidation(form, configForm) {
   form.addEventListener("input", () => {
     toggleSubmitButton(form, configForm);
   });
-  form.addEventListener('reset', () => {
+  form.addEventListener("reset", () => {
     setTimeout(() => {
-      toggleSubmitButton(form, configForm), 0});
-  }); //a timeout callback to reset submit btn after submission //works
-  
+      toggleSubmitButton(form, configForm), 0;
+    });
+  }); //a timeout callback to reset submit btn after submission
+
   addInputListeners(form, configForm);
   toggleSubmitButton(form, configForm);
 }

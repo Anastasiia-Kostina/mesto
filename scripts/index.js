@@ -71,14 +71,6 @@ const openPopupForZoomPic = (event) => {
   openPopup(popupForZoomPic);
 };
 
-/*const closePopupEditProfile = (event) => {
-  closePopup(popupEditProfile);
-};*/
-
-/*const closePopupAddCard = (event) => {
-  closePopup(popupAddCard);
-};*/
-
 const handleClosePopupOnClick = (event) => {
   if (
     event.target === event.currentTarget ||
@@ -86,7 +78,7 @@ const handleClosePopupOnClick = (event) => {
   ) {
     closePopup(event.currentTarget);
   } else {
-    return
+    return;
   }
 };
 //---------------popups open-close end----------
@@ -105,9 +97,7 @@ const handlePopupSubmitEditProfile = (event) => {
   event.preventDefault();
   profileInfoName.textContent = popupInputName.value;
   profileInfoOccupation.textContent = popupInputOccupation.value;
-  //closePopupEditProfile();
-  //handleClosePopupOnClick(); 
-  closePopup(popupEditProfile);//instead of closePopupEditProfile
+  closePopup(popupEditProfile); //instead of closePopupEditProfile
 };
 //----------------------function popup edit end-------------------
 
@@ -120,9 +110,7 @@ const handlePopupSubmitAddCard = (event) => {
     link: popupInputCardLink.value,
   };
   picGalleryCardsContainer.prepend(createCard(cardEntry));
-  //closePopupAddCard();
-  //handleClosePopupOnClick();
-  closePopup(popupAddCard);//instead of closePopupAddCard
+  closePopup(popupAddCard); //instead of closePopupAddCard
   event.target.reset();
 };
 //------------Add handler end-------------------------------
@@ -182,16 +170,12 @@ function renderPopupForZoomPic(event) {
 
 //----------Listeners start----------------------------
 btnEditProfile.addEventListener("click", openPopupEditProfile);
-//popupCloseBtnEditProfile.addEventListener("click", closePopupEditProfile);
-//popupCloseBtnEditProfile.addEventListener("click", handleClosePopupOnClick);//instead of closePopupEditProfile
 popupFormSubmitEditProfile.addEventListener(
   "submit",
   handlePopupSubmitEditProfile
 );
 
 btnAddCard.addEventListener("click", openPopupAddCard);
-//popupCloseBtnAddCard.addEventListener("click", closePopupAddCard);
-//popupCloseBtnAddCard.addEventListener("click", handleClosePopupOnClick);//instead of closePopupAddCard
 popupFormSubmitAddCard.addEventListener("submit", handlePopupSubmitAddCard);
 
 popupEditProfile.addEventListener("click", handleClosePopupOnClick);
